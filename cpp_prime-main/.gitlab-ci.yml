@@ -1,0 +1,504 @@
+stages:
+  - pre-build
+  - build
+  - deploy
+  - upload-reports
+
+.sherlock-template-save:
+  stage: upload-reports
+  tags: ["app"]  
+  image: alpine:latest
+  allow_failure: true
+  variables:
+    SHERLOCK_URL: "https://sherlock-server.mcs.local"
+    SHERLOCK_TOKEN: "shk_ci_cd_V8yjy-Xs0J_WAJIoT-E15etRBI7jAchwnFi5bmy992U"
+  script:
+#    - apk add --no-cache ca-certificates coreutils curl 
+    #openssl
+#    - |
+#      echo | openssl s_client -connect sherlock-server.mcs.local:443 -servername sherlock-server.mcs.local \
+#      | sed -ne '/-BEGIN CERTIFICATE-/,/-END CERTIFICATE-/p' \
+#      > "/usr/local/share/ca-certificates/sherlock.crt"
+#    - update-ca-certificates
+    - chmod +x sher-cli
+    - ls -la
+    - |
+      ./sher-cli upload \
+      --sherlock-url $SHERLOCK_URL \
+      --sherlock-token $SHERLOCK_TOKEN \
+      --create-asset \
+      --scanner-code $SHER_SCANNER_CODE \
+      --skip-ssl-verify=true \
+      --scan-start-date $SHERLOCK_START_SCANNER_SCAN_DATE \
+      --scan-end-date $SHERLOCK_END_SCANNER_SCAN_DATE \
+      --job-started-at $SHERLOCK_START_SCANNER_SCAN_DATE \
+      --job-finished-at $SHERLOCK_END_SCANNER_SCAN_DATE \
+      --report-file $SHER_SCANNER_ARTIFACT_FILE
+
+#      curl -k -H "Authorization: Bearer $SHERLOCK_TOKEN" \
+#      "$SHERLOCK_URL/api/v3/project/info-sec-defect/ci/scanner/$SHER_SCANNER_CODE" \
+#      -F ciProjectUrl="$CI_PROJECT_URL" \
+#      -F ciCommitBranch="$CI_COMMIT_BRANCH" \
+#      -F ciCommitSha="$CI_COMMIT_SHA" \
+#      -F ciCommitTimestamp="$CI_COMMIT_TIMESTAMP" \
+#      -F ciJobStartedAt="$SHERLOCK_START_SCANNER_SCAN_DATE" \
+#      -F ciJobFinishAt="$SHERLOCK_END_SCANNER_SCAN_DATE" \
+#      -F ciPipelineId="$CI_PIPELINE_ID" \
+#      -F ciPipelineUrl="$CI_PIPELINE_URL" \
+#      -F startScanDate="$SHERLOCK_START_SCANNER_SCAN_DATE" \
+#      -F endScanDate="$SHERLOCK_END_SCANNER_SCAN_DATE" \
+#      -F "result=Success" \
+#      -F "file=@$SHER_SCANNER_ARTIFACT_FILE"
+#      SHERLOCK_EXIT_CODE=$?  
+#      if [ $SHERLOCK_EXIT_CODE -eq 0 ]; then
+#        echo -e "\033[32m Дефекты загружены! \033[0m"
+#       exit 0
+#      else
+#        echo -e "\033[31m Ошибка при загрузке (код curl $SHERLOCK_EXIT_CODE) \033[0m"
+#        exit 1
+#      fi
+
+secrets-gitleaks:
+  allow_failure: true
+  tags: ["app"]
+  stage: pre-build
+  image:
+    name: zricethezav/gitleaks:latest
+    entrypoint: [""]
+  before_script:
+    # Переменная для Шерлок, чтобы правильно отображать завершение сканирования инструментом
+    - echo "SHERLOCK_START_GITLEAKS_SCAN_DATE=$(date -d "@$(( $(date +%s) + 10800 ))" -Iseconds)" >> sherlock_scan_date.env
+  script:
+    - gitleaks detect --source . --report-path gitleaks.json
+  after_script:
+    # Переменная для Шерлок, чтобы правильно отображать завершение сканирования инструментом
+    - echo "SHERLOCK_END_GITLEAKS_SCAN_DATE=$(date -d "@$(( $(date +%s) + 10800 ))" -Iseconds)" >> sherlock_scan_date.env
+  artifacts:
+    when: always
+    paths: [gitleaks.json]
+    reports:
+      dotenv: sherlock_scan_date.env
+
+sherlock-gitleaks-save:
+  extends: .sherlock-template-save
+  needs: ["secrets-gitleaks"]
+  dependencies:
+    - secrets-gitleaks
+  variables:
+    SHER_SCANNER_ARTIFACT_FILE: gitleaks.json
+    SHER_SCANNER_CODE: gitleaks
+    #GIT_STRATEGY: none
+  before_script:
+    # Переопределение переменных для Шерлок под запрос в шаблоне (.sherlock-template-save), чтобы правильно отображать завершение сканирования по инструменту
+    - SHERLOCK_START_SCANNER_SCAN_DATE=$SHERLOCK_START_GITLEAKS_SCAN_DATE
+    - SHERLOCK_END_SCANNER_SCAN_DATE=$SHERLOCK_END_GITLEAKS_SCAN_DATE
+
+build-opengrep-image:
+  allow_failure: true
+  stage: pre-build
+  image: docker:latest
+  tags: ["app"]
+  services:
+    - docker:dind
+  script:
+    - |
+      cat << 'EOF' > Dockerfile.opengrep
+      FROM debian:bookworm-slim
+      ENV LANG=C.UTF-8
+      RUN apt-get update && apt-get install -y curl ca-certificates && rm -rf /var/lib/apt/lists/*
+      ARG TARGETARCH
+      RUN if [ "$TARGETARCH" = "arm64" ]; then \
+              DIST="opengrep_manylinux_aarch64"; \
+          else \
+              DIST="opengrep_manylinux_x86"; \
+          fi && \
+          curl -L -o /usr/local/bin/opengrep \
+          "https://github.com/opengrep/opengrep/releases/download/v1.16.3/${DIST}" && \
+          chmod +x /usr/local/bin/opengrep
+      WORKDIR /app
+      ENTRYPOINT ["opengrep"]
+      CMD ["--help"]
+      EOF
+    - docker build -t my-opengrep-image -f Dockerfile.opengrep .
+    - docker save -o opengrep-image.tar my-opengrep-image
+  artifacts:
+    paths:
+      - opengrep-image.tar
+
+sast-opengrep:
+  stage: pre-build
+  image: docker:latest
+  tags: ["app"]
+  services:
+    - docker:dind
+  needs: ["build-opengrep-image"]
+  script:
+    - docker load -i opengrep-image.tar
+    - echo "SHERLOCK_START_OPENGREP_SCAN_DATE=$(date -d "@$(( $(date +%s) + 10800 ))" -Iseconds)" >> sherlock_scan_date.env
+    - docker run --rm -v $(pwd):/app my-opengrep-image scan --taint-intrafile --config auto --no-git-ignore --json -o sast-opengrep.json /app || true
+  after_script:
+    - echo "SHERLOCK_END_OPENGREP_SCAN_DATE=$(date -d "@$(( $(date +%s) + 10800 ))" -Iseconds)" >> sherlock_scan_date.env
+  artifacts:
+    paths: [sast-opengrep.json]
+    reports:
+      dotenv: sherlock_scan_date.env
+    when: always
+  allow_failure: true
+
+sherlock-opengrep-save:
+  extends: .sherlock-template-save
+  needs: ["sast-opengrep"]
+  dependencies:
+    - sast-opengrep
+  variables:
+    SHER_SCANNER_ARTIFACT_FILE: sast-opengrep.json
+    # Это не ошибка, парсер будет тот же
+    SHER_SCANNER_CODE: semgrep
+    #GIT_STRATEGY: none
+  before_script:
+    - SHERLOCK_START_SCANNER_SCAN_DATE=$SHERLOCK_START_OPENGREP_SCAN_DATE
+    - SHERLOCK_END_SCANNER_SCAN_DATE=$SHERLOCK_END_OPENGREP_SCAN_DATE
+
+#  --config "https://github.com/0xdea/semgrep-rules" 
+
+sast-opengrep-c:
+  stage: pre-build
+  image: docker:latest
+  tags: ["app"]
+  services:
+    - docker:dind
+  needs: ["build-opengrep-image"]
+  script:
+    - docker load -i opengrep-image.tar
+    - echo "SHERLOCK_START_OPENGREP_C_SCAN_DATE=$(date -d "@$(( $(date +%s) + 10800 ))" -Iseconds)" >> sherlock_scan_date.env
+    - docker run --rm -v $(pwd):/app my-opengrep-image scan --taint-intrafile --config "p/0xdea" --no-git-ignore --json -o sast-opengrep-c.json /app || true
+  after_script:
+    - echo "SHERLOCK_END_OPENGREP_C_SCAN_DATE=$(date -d "@$(( $(date +%s) + 10800 ))" -Iseconds)" >> sherlock_scan_date.env
+  artifacts:
+    paths: [sast-opengrep-c.json]
+    reports:
+      dotenv: sherlock_scan_date.env
+    when: always
+  allow_failure: true
+
+sherlock-opengrep-c-save:
+  extends: .sherlock-template-save
+  needs: ["sast-opengrep-c"]
+  dependencies:
+    - sast-opengrep-c
+  variables:
+    SHER_SCANNER_ARTIFACT_FILE: sast-opengrep-c.json
+    # Это не ошибка, парсер будет тот же
+    SHER_SCANNER_CODE: semgrep
+    #GIT_STRATEGY: none
+  before_script:
+    - SHERLOCK_START_SCANNER_SCAN_DATE=$SHERLOCK_START_OPENGREP_C_SCAN_DATE
+    - SHERLOCK_END_SCANNER_SCAN_DATE=$SHERLOCK_END_OPENGREP_C_SCAN_DATE
+
+sast-semgrep:
+  stage: pre-build
+  tags: ["app"]
+  image: semgrep/semgrep:1.168.0
+  before_script:
+    - echo "SHERLOCK_START_SEMGREP_SCAN_DATE=$(date -d "@$(( $(date +%s) + 10800 ))" -Iseconds)" >> sherlock_scan_date.env
+  script:
+    - semgrep ci --disable-nosem --config "p/0xdea" --json --json-output=semgrep.json --timeout 30
+  after_script:
+    - echo "SHERLOCK_END_SEMGREP_SCAN_DATE=$(date -d "@$(( $(date +%s) + 10800 ))" -Iseconds)" >> sherlock_scan_date.env
+    - |
+      jq -e 'any(.results[]?; .extra.severity=="ERROR")' semgrep.json >/dev/null
+      case $? in
+          0)
+              echo "ERROR findings detected"
+              exit 1
+              ;;
+          1)
+              echo "No ERROR findings"
+              ;;
+          *)
+              echo "Failed to parse semgrep.json"
+              exit 2
+              ;;
+      esac
+  artifacts:
+    paths: [semgrep.json]
+    reports:
+      dotenv: sherlock_scan_date.env
+    when: always
+    expire_in: one week
+  allow_failure: true
+
+sherlock-semgrep-save:
+  extends: .sherlock-template-save
+  needs: ["sast-semgrep"]
+  dependencies:
+    - sast-semgrep
+  variables:
+    SHER_SCANNER_ARTIFACT_FILE: semgrep.json
+    SHER_SCANNER_CODE: semgrep
+    ##GIT_STRATEGY: none
+  before_script:
+    - SHERLOCK_START_SCANNER_SCAN_DATE=$SHERLOCK_START_SEMGREP_SCAN_DATE
+    - SHERLOCK_END_SCANNER_SCAN_DATE=$SHERLOCK_END_SEMGREP_SCAN_DATE
+
+build-ptai-aisa-image:
+  stage: pre-build
+  image: docker:latest
+  tags: ["app"]
+  services:
+    - docker:dind
+  before_script:
+    - |
+      cat << 'EOF' > Dockerfile.aisa 
+      FROM ubuntu:24.04
+      ARG AISA_VERSION="6.0.0.1079"
+      RUN set -e; \
+        apt-get update -y && \
+        apt-get install -yqq --no-install-recommends ca-certificates gnupg curl apt-utils wget
+      RUN set -eux; \
+        wget -qO - https://update.ptsecurity.com/packages/PT-public.gpg \
+          | gpg --dearmor \
+          > /usr/share/keyrings/ptsecurity-archive-keyring.gpg; \
+        echo "deb [signed-by=/usr/share/keyrings/ptsecurity-archive-keyring.gpg] \
+          https://update.ptsecurity.com/packages/deb/AI.Shell/release all non-free" \
+          > /etc/apt/sources.list.d/ptsecurity.list; \
+        apt-get update -y; \
+        apt-get install -y --no-install-recommends \
+          aisa=$AISA_VERSION \
+          libssl3 \
+          libgssapi-krb5-2 \
+          libicu-dev ; \
+        rm -rf /var/lib/apt/lists/*
+      EOF
+  script:
+    - cat Dockerfile.aisa
+    - docker build -t ptai-aisa-image -f Dockerfile.aisa .
+    - docker save -o ptai-aisa-image.tar ptai-aisa-image
+    - rm Dockerfile.aisa
+  artifacts:
+    paths:
+      - ptai-aisa-image.tar
+
+sast-ptai-aisa:
+  stage: pre-build
+  tags: ["app"]
+  image: docker:latest
+  allow_failure: true
+  needs: ["build-ptai-aisa-image"]
+  variables:
+    # Необходимо в обязательном порядке убрать/переместить секреты 
+    PT_AI_URL: "https://ptai-server.mcs.local"
+    PT_AI_TOKEN: "rN0JK40rBMT6oJaaoFE+IHV+zdm8/vTg"
+    PKG_FILES: ".npmrc package.json pom.xml composer.json requirements.txt pyproject.toml"
+    AISA_ARTIFACT: "ptai-aisa.$CI_COMMIT_SHORT_SHA.json"
+    AISA_OPTS: "--scan-target $CI_PROJECT_DIR \
+      -u $PT_AI_URL \
+      -t $PT_AI_TOKEN \
+      --project-name ${CI_PROJECT_NAME} \
+      --create-branch \
+      --branch-name ${CI_COMMIT_REF_NAME} \
+      --reports-folder=/tmp \
+      --report json \
+      --file-exclusions .aiignore \
+      --log-level debug \
+      --multifile \
+      --project-settings-file=/tmp/config.json"
+  artifacts:
+    when: always
+    expire_in: 2 days
+    paths: ["$AISA_ARTIFACT"]
+    reports:
+      dotenv: sherlock_scan_date.env
+  before_script:
+    - docker load -i ptai-aisa-image.tar
+    # Переменная для Шерлок, чтобы правильно отображать завершение сканирования инструментом
+    - echo "SHERLOCK_START_PTAI_SCAN_DATE=$(date -d "@$(( $(date +%s) + 10800 ))" -Iseconds)" >> sherlock_scan_date.env
+  script:
+    - export PROJECT_LANGUAGES=""
+    - export NODE_TLS_REJECT_UNAUTHORIZED=0
+    - export LANGUAGE_SETTINGS=""
+    - touch .aiignore
+    - |
+      for sln in *.sln; do
+          [ -f "$sln" ] && PKG_FILES="$PKG_FILES $sln"
+      done
+      echo $PKG_FILES
+
+      for filename in $PKG_FILES; do
+          if [ -f $filename ]; then
+              if [ $filename = "package.json" ]; then
+                  if [ -f "yarn.lock" ]; then
+                      yarn config set registry $(cat .npmrc | sed -n 's/registry=//p') && yarn install --update-checksums --ignore-scripts
+                  else
+                      npm install || true
+                  fi
+                  echo 'node_modules/' >> .aiignore
+                  PROJECT_LANGUAGES=$PROJECT_LANGUAGES'"'JavaScript'"'
+                  LANGUAGE_SETTINGS=$LANGUAGE_SETTINGS'"JavaScriptSettings": { 
+                  "UsePublicAnalysisMethod": true,
+                  "DownloadDependencies": false,
+                  "CustomParameters": null
+                  },'
+                  echo $LANGUAGE_SETTINGS
+              elif [ $filename = "pom.xml" ]; then
+                  PROJECT_LANGUAGES=$PROJECT_LANGUAGES'"'Java'"'
+                  LANGUAGE_SETTINGS=$LANGUAGE_SETTINGS'"JavaSettings": {
+                  "Parameters": null,
+                  "UnpackUserPackages": false,
+                  "UserPackagePrefixes": null,
+                  "Version": "17",
+                  "UsePublicAnalysisMethod": false,
+                  "DownloadDependencies": true,
+                  "CustomParameters": null
+                  },'
+              elif [[ "$filename" == *.sln ]]; then
+                  PROJECT_LANGUAGES="${PROJECT_LANGUAGES}\"CSharp (Windows, Linux)\""
+                  LANGUAGE_SETTINGS=$LANGUAGE_SETTINGS'"DotNetSettings": {
+                  "ProjectType": "Solution", 
+                  "SolutionFile": "'"$filename"'", 
+                  "UsePublicAnalysisMethod": false,
+                  "DownloadDependencies": true,
+                  "CustomParameters": null
+                  },'
+              elif [ $filename = "composer.json" ]; then
+                  PROJECT_LANGUAGES=$PROJECT_LANGUAGES'"'Php'"'
+                  LANGUAGE_SETTINGS=$LANGUAGE_SETTINGS'"PhpSettings": {
+                  "UsePublicAnalysisMethod": false,
+                  "DownloadDependencies": true,
+                  "CustomParameters": null
+                  },'
+              elif [ $filename = "pyproject.toml" ]; then
+                  PROJECT_LANGUAGES=$PROJECT_LANGUAGES'"'Python'"'
+                  LANGUAGE_SETTINGS=$LANGUAGE_SETTINGS'"PythonSettings": {
+                  "UsePublicAnalysisMethod": false,
+                  "DownloadDependencies": false,
+                  "CustomParameters": null
+                  },'
+              elif [ $filename = "requirements.txt" ]; then
+                  PROJECT_LANGUAGES=$PROJECT_LANGUAGES'"'Python'"'
+                  LANGUAGE_SETTINGS=$LANGUAGE_SETTINGS'"PythonSettings": {
+                  "UsePublicAnalysisMethod": false,
+                  "DownloadDependencies": false,
+                  "CustomParameters": null
+                  },'
+              fi
+              elif [ $filename = "filename.cc" ]; then
+                  PROJECT_LANGUAGES=$PROJECT_LANGUAGES'"'CAndCPlusPlus'"'
+                  LANGUAGE_SETTINGS=$LANGUAGE_SETTINGS'"PmTaintSettings": {
+                  "UsePublicAnalysisMethod": false,
+                  "DownloadDependencies": false,
+                  "CustomParameters": null
+                  },'
+              fi
+          fi
+      done
+      PROJECT_LANGUAGES=$(echo $PROJECT_LANGUAGES|sed 's/\"\"/\"\,\"/g')
+      echo $PROJECT_LANGUAGES
+    - |
+      echo '{
+              "$schema": "https://json.schemastore.org/aiproj-1.11.json",
+              "Version": "1.11",
+              "ProjectName": "'"${CI_PROJECT_NAME}"'",
+              "BranchName": "'"${CI_COMMIT_REF_NAME}"'",
+              "ProgrammingLanguages": ['${PROJECT_LANGUAGES}'],
+              '${LANGUAGE_SETTINGS}'
+              "ApplyAllPMRules": false,
+          }' > /tmp/config.json
+    - cat /tmp/config.json
+    - docker run --rm -v $(pwd):/app -v /tmp:/tmp ptai-aisa-image $AISA_OPTS
+  after_script:
+    - rm ptai-aisa-image.tar
+    - ls /tmp
+    # Переименование Report_*.json файлов отчета в значение переменной AISA_ARTIFACT, исключая config.json
+    - find /tmp -maxdepth 1 -type f -name "Report_*.json" ! -name "config.json" -exec mv {} $AISA_ARTIFACT \; -quit
+    # Переменная для Шерлок, чтобы правильно отображать завершение сканирования инструментом
+    - echo "SHERLOCK_END_PTAI_SCAN_DATE=$(date -d "@$(( $(date +%s) + 10800 ))" -Iseconds)" >> sherlock_scan_date.env
+
+sherlock-ptai-save:
+  tags: ["app"]
+  extends: .sherlock-template-save
+  needs: ["sast-ptai-aisa"]
+  dependencies:
+    - sast-ptai-aisa
+  variables:
+    SHER_SCANNER_ARTIFACT_FILE: ptai-aisa.$CI_COMMIT_SHORT_SHA.json
+    SHER_SCANNER_CODE: pt_ai
+    #GIT_STRATEGY: none
+  before_script:
+    - SHERLOCK_START_SCANNER_SCAN_DATE=$SHERLOCK_START_PTAI_SCAN_DATE
+    - SHERLOCK_END_SCANNER_SCAN_DATE=$SHERLOCK_END_PTAI_SCAN_DATE
+
+
+sca-trivy:
+  stage: pre-build
+  tags: ["app"]
+  image: 
+    name: aquasec/trivy:0.70.0
+    entrypoint: [""]
+  variables:
+    TRIVY_DB_REPOSITORY: public.shturval.tech/trivy-db
+  before_script:
+    - echo "SHERLOCK_START_TRIVY_FS_SCAN_DATE=$(date -d "@$(( $(date +%s) + 10800 ))" -Iseconds)" >> sherlock_scan_date.env
+  script:
+    - trivy fs -f json -o trivy-fs.json . || true
+  after_script:
+    - echo "SHERLOCK_END_TRIVY_FS_SCAN_DATE=$(date -d "@$(( $(date +%s) + 10800 ))" -Iseconds)" >> sherlock_scan_date.env 
+  artifacts:
+    paths: [trivy-fs.json]
+    when: always
+    reports:
+      dotenv: sherlock_scan_date.env
+  allow_failure: true
+
+# Для загрузки данного отчета в Шерлок необходимо делать кастомный парсер
+# Инструкция вам доступна в архиве вместе с инструкцией установки
+# Переменную SHER_SCANNER_CODE можно получить в CI шаблона проекта
+sherlock-trivy-fs-save:
+  tags: ["app"]
+  extends: .sherlock-template-save
+  needs: ["sca-trivy"]
+  dependencies:
+    - sca-trivy
+  variables:
+    SHER_SCANNER_ARTIFACT_FILE: trivy-fs.json
+    SHER_SCANNER_CODE: custom_scanner_sca_8f673df7
+    #GIT_STRATEGY: none
+  before_script:
+    - SHERLOCK_START_SCANNER_SCAN_DATE=$SHERLOCK_START_TRIVY_FS_SCAN_DATE
+    - SHERLOCK_END_SCANNER_SCAN_DATE=$SHERLOCK_END_TRIVY_FS_SCAN_DATE
+
+
+#upload-reports:
+#  stage: upload-reports
+#  tags: ["app"]
+#  image: alpine:latest
+#  script:
+#    - echo "All security reports collected."
+#    - ls -la *.json|| true
+#  needs:
+#    - job: secrets-gitleaks
+#      artifacts: true
+#    - job: secrets-trufflehog-fs
+#      artifacts: true
+#    - job: sast-semgrep-agent
+#      artifacts: true
+#    - job: sast-opengrep
+#      artifacts: true
+#    - job: sca-trivy
+#      artifacts: true
+#    - job: image-scan-trivy-backend
+#      artifacts: true
+#    - job: image-scan-trivy-frontend
+#      artifacts: true
+#  artifacts:
+#    paths:
+#      - gitleaks.json
+#      - trufflehog-fs.json
+#      - semgrep.json
+#      - opengrep.json
+#      - trivy-fs.json
+#      - trivy-image-backend.json
+#      - trivy-image-frontend.json
+#    when: always
+#    expire_in: 1 week
+#  allow_failure: true

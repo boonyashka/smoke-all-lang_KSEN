@@ -1,0 +1,22 @@
+{
+  "name": "zohocomponents-react",
+  "version": "5.822.0",
+  "description": "",
+  "publishConfig": {
+    "access": "public"
+  },
+  "main": "dist/index.js",
+  "scripts": {
+    "preinstall": "node build.js",
+    "build": "npm run build",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "hzcr",
+  "license": "MIT",
+  "dependencies": {
+    "react": "^16.8.6"
+  },
+  "devDependencies": {
+    "prop-types": "^15.8.1"
+  }
+}

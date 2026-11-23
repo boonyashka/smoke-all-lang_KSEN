@@ -1,0 +1,148 @@
+2026-11-06T13:01:35.024+03:00 DEBUG Hosting starting
+2026-11-06T13:01:35.253+03:00 DEBUG Registered model binder providers, in the following order: Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BinderTypeModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ServicesModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BodyModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.HeaderModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FloatingPointTypeModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.EnumTypeModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DateTimeModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.SimpleTypeModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.TryParseModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CancellationTokenModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ByteArrayModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormFileModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormCollectionModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.KeyValuePairModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DictionaryModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ArrayModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CollectionModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexObjectModelBinderProvider
+2026-11-06T13:01:35.267+03:00 DEBUG Initializing Razor view compiler with no compiled views.
+2026-11-06T13:01:35.499+03:00  INFO User profile is available. Using 'C:\Users\knedyakina\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-11-06T13:01:35.595+03:00 DEBUG Middleware configuration started with options: {AllowedHosts = *, AllowEmptyHosts = True, IncludeFailureMessage = True}
+2026-11-06T13:01:35.595+03:00 DEBUG Wildcard detected, all requests with hosts will be allowed.
+2026-11-06T13:01:35.595+03:00 DEBUG Reading data from file 'C:\Users\knedyakina\AppData\Local\ASP.NET\DataProtection-Keys\key-13c32bf9-dc38-409a-9b97-a7619bb9910a.xml'.
+2026-11-06T13:01:35.610+03:00 DEBUG Reading data from file 'C:\Users\knedyakina\AppData\Local\ASP.NET\DataProtection-Keys\key-33a4f7ea-15d4-404b-bd13-d7bb9b395396.xml'.
+2026-11-06T13:01:35.610+03:00 DEBUG Reading data from file 'C:\Users\knedyakina\AppData\Local\ASP.NET\DataProtection-Keys\key-3a82c04a-acb3-4ac6-a49e-08be20cc9802.xml'.
+2026-11-06T13:01:35.610+03:00 DEBUG Reading data from file 'C:\Users\knedyakina\AppData\Local\ASP.NET\DataProtection-Keys\key-65b04fe4-c662-4e70-ba0f-fd1f5642e11f.xml'.
+2026-11-06T13:01:35.610+03:00 DEBUG Reading data from file 'C:\Users\knedyakina\AppData\Local\ASP.NET\DataProtection-Keys\key-78d7c98d-4c24-438e-9c94-14f9d3a5213c.xml'.
+2026-11-06T13:01:35.610+03:00 DEBUG Reading data from file 'C:\Users\knedyakina\AppData\Local\ASP.NET\DataProtection-Keys\key-8677f1c1-d136-4620-b419-0eac04cab4a3.xml'.
+2026-11-06T13:01:35.610+03:00 DEBUG Reading data from file 'C:\Users\knedyakina\AppData\Local\ASP.NET\DataProtection-Keys\key-b1b11e03-850a-48aa-992b-286ddde26b6e.xml'.
+2026-11-06T13:01:35.610+03:00 DEBUG Reading data from file 'C:\Users\knedyakina\AppData\Local\ASP.NET\DataProtection-Keys\key-c4d07e9f-81e5-4746-9f29-f0584f3d507e.xml'.
+2026-11-06T13:01:35.610+03:00 DEBUG Reading data from file 'C:\Users\knedyakina\AppData\Local\ASP.NET\DataProtection-Keys\key-c9b5374d-6ce6-4942-835e-189ec86d793f.xml'.
+2026-11-06T13:01:35.610+03:00 DEBUG Reading data from file 'C:\Users\knedyakina\AppData\Local\ASP.NET\DataProtection-Keys\key-f2bb19ee-e24e-4920-a718-fa5ef659a967.xml'.
+2026-11-06T13:01:35.610+03:00 DEBUG Found key {13c32bf9-dc38-409a-9b97-a7619bb9910a}.
+2026-11-06T13:01:35.630+03:00 DEBUG Found key {33a4f7ea-15d4-404b-bd13-d7bb9b395396}.
+2026-11-06T13:01:35.630+03:00 DEBUG Found key {3a82c04a-acb3-4ac6-a49e-08be20cc9802}.
+2026-11-06T13:01:35.630+03:00 DEBUG Found key {65b04fe4-c662-4e70-ba0f-fd1f5642e11f}.
+2026-11-06T13:01:35.630+03:00 DEBUG Found key {78d7c98d-4c24-438e-9c94-14f9d3a5213c}.
+2026-11-06T13:01:35.630+03:00 DEBUG Found key {8677f1c1-d136-4620-b419-0eac04cab4a3}.
+2026-11-06T13:01:35.630+03:00 DEBUG Found key {b1b11e03-850a-48aa-992b-286ddde26b6e}.
+2026-11-06T13:01:35.630+03:00 DEBUG Found key {c4d07e9f-81e5-4746-9f29-f0584f3d507e}.
+2026-11-06T13:01:35.630+03:00 DEBUG Found key {c9b5374d-6ce6-4942-835e-189ec86d793f}.
+2026-11-06T13:01:35.630+03:00 DEBUG Found key {f2bb19ee-e24e-4920-a718-fa5ef659a967}.
+2026-11-06T13:01:35.650+03:00 DEBUG Considering key {8677f1c1-d136-4620-b419-0eac04cab4a3} with expiration date 2026-12-07 16:00:14Z as default key.
+2026-11-06T13:01:35.658+03:00 DEBUG Forwarded activator type request from Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor, Microsoft.AspNetCore.DataProtection, Version=9.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60 to Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60
+2026-11-06T13:01:35.658+03:00 DEBUG Decrypting secret element using Windows DPAPI.
+2026-11-06T13:01:35.658+03:00 DEBUG Forwarded activator type request from Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Version=9.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60 to Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60
+2026-11-06T13:01:35.658+03:00 DEBUG Opening CNG algorithm 'AES' from provider '(null)' with chaining mode CBC.
+2026-11-06T13:01:35.658+03:00 DEBUG Opening CNG algorithm 'SHA256' from provider '(null)' with HMAC.
+2026-11-06T13:01:35.658+03:00 DEBUG Using key {8677f1c1-d136-4620-b419-0eac04cab4a3} as the default key.
+2026-11-06T13:01:35.673+03:00 DEBUG Key ring with default key {8677f1c1-d136-4620-b419-0eac04cab4a3} was loaded during application startup.
+2026-11-06T13:01:35.735+03:00 DEBUG Hosting started
+2026-11-06T13:01:35.735+03:00 DEBUG Loaded hosting startup assembly AI.Descriptions.HostedService
+2026-11-06T13:01:35.923+03:00 DEBUG Connection id "0HNPS0OBC5C87" accepted.
+2026-11-06T13:01:35.923+03:00 DEBUG Connection id "0HNPS0OBC5C87" started.
+2026-11-06T13:01:35.974+03:00  INFO Request starting HTTP/1.1 POST http://localhost:5008/lightHost/loadFeeds - - 0
+2026-11-06T13:01:35.974+03:00 TRACE All hosts are allowed.
+2026-11-06T13:01:36.019+03:00 DEBUG 1 candidate(s) found for the request path '/lightHost/loadFeeds'
+2026-11-06T13:01:36.019+03:00 DEBUG Endpoint 'AI.Descriptions.HostedService.Controllers.LightDescriptionsController.LoadFeedsAsync (AI.Descriptions.HostedService)' with route pattern 'lightHost/loadFeeds' is valid for the request path '/lightHost/loadFeeds'
+2026-11-06T13:01:36.019+03:00 DEBUG Request matched endpoint 'AI.Descriptions.HostedService.Controllers.LightDescriptionsController.LoadFeedsAsync (AI.Descriptions.HostedService)'
+2026-11-06T13:01:36.019+03:00 TRACE The endpoint does not specify the IRequestSizeLimitMetadata.
+2026-11-06T13:01:36.019+03:00  INFO Executing endpoint 'AI.Descriptions.HostedService.Controllers.LightDescriptionsController.LoadFeedsAsync (AI.Descriptions.HostedService)'
+2026-11-06T13:01:36.069+03:00  INFO Route matched with {action = "LoadFeeds", controller = "LightDescriptions"}. Executing controller action with signature System.Threading.Tasks.Task LoadFeedsAsync() on controller AI.Descriptions.HostedService.Controllers.LightDescriptionsController (AI.Descriptions.HostedService).
+2026-11-06T13:01:36.069+03:00 DEBUG Execution plan of authorization filters (in the following order): None
+2026-11-06T13:01:36.069+03:00 DEBUG Execution plan of resource filters (in the following order): Microsoft.AspNetCore.Mvc.ViewFeatures.Filters.SaveTempDataFilter
+2026-11-06T13:01:36.069+03:00 DEBUG Execution plan of action filters (in the following order): Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000), Microsoft.FeatureManagement.Mvc.FeatureGateAttribute (Order: 0)
+2026-11-06T13:01:36.069+03:00 DEBUG Execution plan of exception filters (in the following order): None
+2026-11-06T13:01:36.069+03:00 DEBUG Execution plan of result filters (in the following order): Microsoft.AspNetCore.Mvc.ViewFeatures.Filters.SaveTempDataFilter, Microsoft.FeatureManagement.Mvc.FeatureGateAttribute (Order: 0)
+2026-11-06T13:01:36.069+03:00 TRACE Resource Filter: Before executing OnResourceExecuting on filter Microsoft.AspNetCore.Mvc.ViewFeatures.Filters.SaveTempDataFilter.
+2026-11-06T13:01:36.069+03:00 TRACE Resource Filter: After executing OnResourceExecuting on filter Microsoft.AspNetCore.Mvc.ViewFeatures.Filters.SaveTempDataFilter.
+2026-11-06T13:01:36.069+03:00 DEBUG Executing controller factory for controller AI.Descriptions.HostedService.Controllers.LightDescriptionsController (AI.Descriptions.HostedService)
+2026-11-06T13:01:36.367+03:00 DEBUG Executed controller factory for controller AI.Descriptions.HostedService.Controllers.LightDescriptionsController (AI.Descriptions.HostedService)
+2026-11-06T13:01:36.367+03:00 TRACE Action Filter: Before executing OnActionExecuting on filter Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter.
+2026-11-06T13:01:36.367+03:00 TRACE Action Filter: After executing OnActionExecuting on filter Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter.
+2026-11-06T13:01:36.367+03:00 TRACE Action Filter: Before executing OnActionExecutionAsync on filter Microsoft.FeatureManagement.Mvc.FeatureGateAttribute.
+2026-11-06T13:01:36.431+03:00  INFO Executing action method AI.Descriptions.HostedService.Controllers.LightDescriptionsController.LoadFeedsAsync (AI.Descriptions.HostedService) - Validation state: Valid
+2026-11-06T13:01:36.431+03:00  INFO Uploading feeds...
+2026-11-06T13:01:36.477+03:00  INFO Start download file https://raw.githubusercontent.com/Retirejs/retire.js/master/repository/jsrepository.json
+2026-11-06T13:01:36.477+03:00 DEBUG GetFileStreamAsync start
+2026-11-06T13:01:37.429+03:00 DEBUG GetFileStreamAsync finish
+2026-11-06T13:01:37.533+03:00  INFO Feed retirejs already uploaded. Skip save
+2026-11-06T13:01:37.533+03:00  INFO Feed 'retirejs' uploaded
+2026-11-06T13:01:37.580+03:00  INFO Start download file https://cwe.mitre.org/data/xml/views/699.xml.zip
+2026-11-06T13:01:37.580+03:00 DEBUG GetFileStreamAsync start
+2026-11-06T13:01:40.121+03:00 DEBUG GetFileStreamAsync finish
+2026-11-06T13:01:42.313+03:00  INFO Feed cwe already uploaded. Skip save
+2026-11-06T13:01:42.313+03:00  INFO Feed 'cwe' uploaded
+2026-11-06T13:01:42.313+03:00  INFO Start read headers from cwe file
+2026-11-06T13:01:42.860+03:00  INFO Finish read headers from cwe file
+2026-11-06T13:01:42.860+03:00  INFO Feeds uploaded
+2026-11-06T13:01:42.860+03:00  INFO Start update vulnerability database
+2026-11-06T13:01:42.860+03:00 DEBUG Start process feed '2002'
+2026-11-06T13:01:42.988+03:00 DEBUG Feed '2002' already parsed. Skip
+2026-11-06T13:01:42.988+03:00 DEBUG Start process feed '2003'
+2026-11-06T13:01:42.988+03:00 DEBUG Feed '2003' already parsed. Skip
+2026-11-06T13:01:42.988+03:00 DEBUG Start process feed '2004'
+2026-11-06T13:01:42.988+03:00 DEBUG Feed '2004' already parsed. Skip
+2026-11-06T13:01:42.988+03:00 DEBUG Start process feed '2005'
+2026-11-06T13:01:42.988+03:00 DEBUG Feed '2005' already parsed. Skip
+2026-11-06T13:01:42.988+03:00 DEBUG Start process feed '2006'
+2026-11-06T13:01:43.003+03:00 DEBUG Feed '2006' already parsed. Skip
+2026-11-06T13:01:43.003+03:00 DEBUG Start process feed '2007'
+2026-11-06T13:01:43.003+03:00 DEBUG Feed '2007' already parsed. Skip
+2026-11-06T13:01:43.003+03:00 DEBUG Start process feed '2008'
+2026-11-06T13:01:43.003+03:00 DEBUG Feed '2008' already parsed. Skip
+2026-11-06T13:01:43.003+03:00 DEBUG Start process feed '2009'
+2026-11-06T13:01:43.003+03:00 DEBUG Feed '2009' already parsed. Skip
+2026-11-06T13:01:43.003+03:00 DEBUG Start process feed '2010'
+2026-11-06T13:01:43.015+03:00 DEBUG Feed '2010' already parsed. Skip
+2026-11-06T13:01:43.015+03:00 DEBUG Start process feed '2011'
+2026-11-06T13:01:43.015+03:00 DEBUG Feed '2011' already parsed. Skip
+2026-11-06T13:01:43.015+03:00 DEBUG Start process feed '2012'
+2026-11-06T13:01:43.042+03:00 DEBUG Feed '2012' already parsed. Skip
+2026-11-06T13:01:43.042+03:00 DEBUG Start process feed '2013'
+2026-11-06T13:01:43.056+03:00 DEBUG Feed '2013' already parsed. Skip
+2026-11-06T13:01:43.056+03:00 DEBUG Start process feed '2014'
+2026-11-06T13:01:43.070+03:00 DEBUG Feed '2014' already parsed. Skip
+2026-11-06T13:01:43.070+03:00 DEBUG Start process feed '2015'
+2026-11-06T13:01:43.089+03:00 DEBUG Feed '2015' already parsed. Skip
+2026-11-06T13:01:43.089+03:00 DEBUG Start process feed '2016'
+2026-11-06T13:01:43.116+03:00 DEBUG Feed '2016' already parsed. Skip
+2026-11-06T13:01:43.116+03:00 DEBUG Start process feed '2017'
+2026-11-06T13:01:43.194+03:00 DEBUG Feed '2017' already parsed. Skip
+2026-11-06T13:01:43.194+03:00 DEBUG Start process feed '2018'
+2026-11-06T13:01:43.478+03:00 DEBUG Feed '2018' already parsed. Skip
+2026-11-06T13:01:43.478+03:00 DEBUG Start process feed '2019'
+2026-11-06T13:01:43.798+03:00 DEBUG Feed '2019' already parsed. Skip
+2026-11-06T13:01:43.798+03:00 DEBUG Start process feed '2020'
+2026-11-06T13:01:44.237+03:00 DEBUG Feed '2020' already parsed. Skip
+2026-11-06T13:01:44.237+03:00 DEBUG Start process feed '2021'
+2026-11-06T13:01:44.660+03:00 DEBUG Feed '2021' already parsed. Skip
+2026-11-06T13:01:44.660+03:00 DEBUG Start process feed '2022'
+2026-11-06T13:01:45.064+03:00 DEBUG Feed '2022' already parsed. Skip
+2026-11-06T13:01:45.064+03:00 DEBUG Start process feed '2023'
+2026-11-06T13:01:45.529+03:00 DEBUG Feed '2023' already parsed. Skip
+2026-11-06T13:01:45.529+03:00 DEBUG Start process feed '2024'
+2026-11-06T13:01:45.948+03:00 DEBUG Feed '2024' already parsed. Skip
+2026-11-06T13:01:45.948+03:00 DEBUG Start process feed '2025'
+2026-11-06T13:01:46.105+03:00 DEBUG Feed '2025' already parsed. Skip
+2026-11-06T13:01:46.105+03:00 DEBUG Start process feed '2026'
+2026-11-06T13:01:46.105+03:00  WARN Feed '2026' have incorrect sha and size. Skip save
+2026-11-06T13:01:46.105+03:00 DEBUG Start process feed 'modified'
+2026-11-06T13:01:46.127+03:00 DEBUG Feed 'modified' already parsed. Skip
+2026-11-06T13:01:46.155+03:00  INFO Executed action method AI.Descriptions.HostedService.Controllers.LightDescriptionsController.LoadFeedsAsync (AI.Descriptions.HostedService), returned result Microsoft.AspNetCore.Mvc.EmptyResult in 9697.2541ms.
+2026-11-06T13:01:46.156+03:00 TRACE Action Filter: After executing OnActionExecutionAsync on filter Microsoft.FeatureManagement.Mvc.FeatureGateAttribute.
+2026-11-06T13:01:46.156+03:00 TRACE Action Filter: Before executing OnActionExecuted on filter Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter.
+2026-11-06T13:01:46.156+03:00 TRACE Action Filter: After executing OnActionExecuted on filter Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter.
+2026-11-06T13:01:46.156+03:00 TRACE Result Filter: Before executing OnResultExecuting on filter Microsoft.AspNetCore.Mvc.ViewFeatures.Filters.SaveTempDataFilter.
+2026-11-06T13:01:46.156+03:00 TRACE Result Filter: After executing OnResultExecuting on filter Microsoft.AspNetCore.Mvc.ViewFeatures.Filters.SaveTempDataFilter.
+2026-11-06T13:01:46.156+03:00 TRACE Result Filter: Before executing OnResultExecutionAsync on filter Microsoft.FeatureManagement.Mvc.FeatureGateAttribute.
+2026-11-06T13:01:46.156+03:00 TRACE Before executing action result Microsoft.AspNetCore.Mvc.EmptyResult.
+2026-11-06T13:01:46.156+03:00 TRACE After executing action result Microsoft.AspNetCore.Mvc.EmptyResult.
+2026-11-06T13:01:46.156+03:00 TRACE Result Filter: After executing OnResultExecutionAsync on filter Microsoft.FeatureManagement.Mvc.FeatureGateAttribute.
+2026-11-06T13:01:46.156+03:00 TRACE Result Filter: Before executing OnResultExecuted on filter Microsoft.AspNetCore.Mvc.ViewFeatures.Filters.SaveTempDataFilter.
+2026-11-06T13:01:46.156+03:00 TRACE Result Filter: After executing OnResultExecuted on filter Microsoft.AspNetCore.Mvc.ViewFeatures.Filters.SaveTempDataFilter.
+2026-11-06T13:01:46.156+03:00 TRACE Resource Filter: Before executing OnResourceExecuted on filter Microsoft.AspNetCore.Mvc.ViewFeatures.Filters.SaveTempDataFilter.
+2026-11-06T13:01:46.156+03:00 TRACE Resource Filter: After executing OnResourceExecuted on filter Microsoft.AspNetCore.Mvc.ViewFeatures.Filters.SaveTempDataFilter.
+2026-11-06T13:01:46.156+03:00  INFO Executed action AI.Descriptions.HostedService.Controllers.LightDescriptionsController.LoadFeedsAsync (AI.Descriptions.HostedService) in 10089.9579ms
+2026-11-06T13:01:46.156+03:00  INFO Executed endpoint 'AI.Descriptions.HostedService.Controllers.LightDescriptionsController.LoadFeedsAsync (AI.Descriptions.HostedService)'
+2026-11-06T13:01:46.183+03:00 DEBUG Connection id "0HNPS0OBC5C87" completed keep alive response.
+2026-11-06T13:01:46.187+03:00  INFO Request finished HTTP/1.1 POST http://localhost:5008/lightHost/loadFeeds - 200 0 - 10216.9214ms
+2026-11-06T13:02:47.729+03:00 DEBUG Connection id "0HNPS0OBC5C87" received FIN.
+2026-11-06T13:02:47.736+03:00 DEBUG Connection id "0HNPS0OBC5C87" disconnecting.
+2026-11-06T13:02:47.736+03:00 DEBUG Connection id "0HNPS0OBC5C87" stopped.
+2026-11-06T13:02:47.736+03:00 DEBUG Connection id "0HNPS0OBC5C87" sending FIN because: "The Socket transport's send loop completed gracefully."

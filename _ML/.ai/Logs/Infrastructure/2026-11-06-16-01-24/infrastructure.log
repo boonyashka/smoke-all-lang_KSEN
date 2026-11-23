@@ -1,0 +1,2165 @@
+2026-11-06T13:01:32.420+03:00 TRACE Run for execution "C:\Users\knedyakina\AppData\Local\Application Inspector Analyzer\utils\descriptionsService\AI.Descriptions.HostedService.exe" in job "job-03f63813-9434-49dc-a059-33139194f34d". Start parameters: " --port 5008 --feed-folder "C:\Users\knedyakina\AppData\Local\Application Inspector Analyzer\feeds" --log-path "C:\QA\(all)\smoke-all-lang-more-update-clear_KSEN\_ML\.ai\Logs\Infrastructure\2026-11-06-16-01-24" --log-level Trace".
+2026-11-06T13:01:32.463+03:00 TRACE Process successful started with pid 16156.
+2026-11-06T13:01:32.463+03:00 TRACE Waiting for exit of process with pid 16156.
+2026-11-06T13:01:32.472+03:00 TRACE update feeds started
+2026-11-06T13:01:32.487+03:00 TRACE Attempt send update feeds request to service
+2026-11-06T13:01:32.847+03:00  INFO There are 1 suitable migrations
+2026-11-06T13:01:32.847+03:00 DEBUG Version '2.9.0' with 2 stage(s)
+2026-11-06T13:01:32.847+03:00  INFO Migration to '2.9.0' version start
+2026-11-06T13:01:32.847+03:00  INFO Migration to '2.9.0' version success complete
+2026-11-06T13:01:37.610+03:00 TRACE BeforeExecute
+BeginTransaction(Serializable)
+2026-11-06T13:01:37.610+03:00 TRACE Query Execution Time (AfterExecute): 00:00:00.0021995
+
+2026-11-06T13:01:37.610+03:00 TRACE BeforeExecute
+--  SQLite.MS SQLite
+
+SELECT
+	[lw_ProjectEntity].[Id],
+	[detail].[Id],
+	[detail].[ProjectId],
+	[detail].[Value]
+FROM
+	[ProjectEntity] [lw_ProjectEntity]
+		INNER JOIN [FilePatternEntity] [detail] ON [lw_ProjectEntity].[Id] = [detail].[Id]
+
+2026-11-06T13:01:37.610+03:00 TRACE Query Execution Time (AfterExecute): 00:00:00.0011212
+
+2026-11-06T13:01:37.610+03:00 TRACE Total Execution Time (Completed): 00:00:00.0021585. Rows Count: 0.
+
+2026-11-06T13:01:37.610+03:00 TRACE BeforeExecute
+DisposeTransaction
+2026-11-06T13:01:37.610+03:00 TRACE Query Execution Time (AfterExecute): 00:00:00.0014871
+
+2026-11-06T13:01:37.610+03:00 TRACE BeforeExecute
+--  SQLite.MS SQLite
+
+SELECT
+	[t1].[Id],
+	[t1].[Name],
+	[t1].[CreationDate],
+	[t1].[SettingsId]
+FROM
+	[ProjectEntity] [t1]
+
+2026-11-06T13:01:37.610+03:00 TRACE Query Execution Time (AfterExecute): 00:00:00.0015482
+
+2026-11-06T13:01:37.610+03:00 TRACE Total Execution Time (Completed): 00:00:00.0031216. Rows Count: 1.
+
+2026-11-06T13:01:37.679+03:00  INFO Git repository not found
+2026-11-06T13:01:37.758+03:00 TRACE BeforeExecute
+--  SQLite.MS SQLite (asynchronously)
+DECLARE @projectId  -- Guid
+SET     @projectId = X'9AACB8FF1EB6DD44AC78A34B234E707A'
+DECLARE @take  -- Int32
+SET     @take = 1
+
+SELECT
+	[x].[Id],
+	[x].[ProjectId],
+	[x].[Name],
+	[x].[Description],
+	[x].[LastScanDate],
+	[x].[LastSyncDate],
+	[x].[CreationDate],
+	[x].[SourcesSettingsId],
+	[x].[IsWorking]
+FROM
+	[BranchEntity] [x]
+WHERE
+	[x].[ProjectId] = @projectId
+ORDER BY
+	[x].[IsWorking] DESC,
+	[x].[CreationDate]
+LIMIT @take
+
+2026-11-06T13:01:37.772+03:00 TRACE Query Execution Time (AfterExecute) (async): 00:00:00.0180402
+
+2026-11-06T13:01:37.804+03:00 TRACE Total Execution Time (Completed) (async): 00:00:00.0679774. Rows Count: 0.
+
+2026-11-06T13:01:38.116+03:00 TRACE BeforeExecute
+--  SQLite.MS SQLite (asynchronously)
+
+SELECT
+	Count(*)
+FROM
+	[ProjectEntity] [t1]
+
+2026-11-06T13:01:38.116+03:00 TRACE Query Execution Time (AfterExecute) (async): 00:00:00.0018170
+
+2026-11-06T13:01:38.129+03:00 TRACE Total Execution Time (Completed) (async): 00:00:00.0371483. Rows Count: 1.
+
+2026-11-06T13:01:38.129+03:00 TRACE BeforeExecute
+BeginTransaction(Serializable)
+2026-11-06T13:01:38.129+03:00 TRACE Query Execution Time (AfterExecute): 00:00:00.0019558
+
+2026-11-06T13:01:38.129+03:00 TRACE BeforeExecute
+--  SQLite.MS SQLite
+
+SELECT
+	[lw_ProjectEntity].[Id],
+	[detail].[Id],
+	[detail].[ProjectId],
+	[detail].[Value]
+FROM
+	[ProjectEntity] [lw_ProjectEntity]
+		INNER JOIN [FilePatternEntity] [detail] ON [lw_ProjectEntity].[Id] = [detail].[Id]
+
+2026-11-06T13:01:38.129+03:00 TRACE Query Execution Time (AfterExecute): 00:00:00.0011673
+
+2026-11-06T13:01:38.129+03:00 TRACE Total Execution Time (Completed): 00:00:00.0026540. Rows Count: 0.
+
+2026-11-06T13:01:38.129+03:00 TRACE BeforeExecute
+DisposeTransaction
+2026-11-06T13:01:38.143+03:00 TRACE Query Execution Time (AfterExecute): 00:00:00.0011910
+
+2026-11-06T13:01:38.143+03:00 TRACE BeforeExecute
+--  SQLite.MS SQLite
+
+SELECT
+	[t1].[Id],
+	[t1].[Name],
+	[t1].[CreationDate],
+	[t1].[SettingsId]
+FROM
+	[ProjectEntity] [t1]
+
+2026-11-06T13:01:38.143+03:00 TRACE Query Execution Time (AfterExecute): 00:00:00.0021830
+
+2026-11-06T13:01:38.143+03:00 TRACE Total Execution Time (Completed): 00:00:00.0036054. Rows Count: 1.
+
+2026-11-06T13:01:38.407+03:00 DEBUG Start checking connection to AIE with 'https://release-630-centos90-6230-release-6-3.aie.ptsecurity.ru/health/summary' uri
+2026-11-06T13:01:38.474+03:00 TRACE BeforeExecute
+--  SQLite.MS SQLite (asynchronously)
+DECLARE @projectId  -- Guid
+SET     @projectId = X'9AACB8FF1EB6DD44AC78A34B234E707A'
+DECLARE @take  -- Int32
+SET     @take = 1
+
+SELECT
+	[x].[Id],
+	[x].[ProjectId],
+	[x].[Name],
+	[x].[Description],
+	[x].[LastScanDate],
+	[x].[LastSyncDate],
+	[x].[CreationDate],
+	[x].[SourcesSettingsId],
+	[x].[IsWorking]
+FROM
+	[BranchEntity] [x]
+WHERE
+	[x].[ProjectId] = @projectId
+ORDER BY
+	[x].[IsWorking] DESC,
+	[x].[CreationDate]
+LIMIT @take
+
+2026-11-06T13:01:38.474+03:00 TRACE Query Execution Time (AfterExecute) (async): 00:00:00.0020316
+
+2026-11-06T13:01:38.474+03:00 TRACE Total Execution Time (Completed) (async): 00:00:00.0043482. Rows Count: 0.
+
+2026-11-06T13:01:38.723+03:00 TRACE BeforeExecute
+BeginTransaction(Serializable)
+2026-11-06T13:01:38.723+03:00 TRACE Query Execution Time (AfterExecute): 00:00:00.0014691
+
+2026-11-06T13:01:38.723+03:00 TRACE BeforeExecute
+--  SQLite.MS SQLite
+DECLARE @id  -- Guid
+SET     @id = X'95E2A4189854384A99BBB887242BEFC0'
+
+SELECT
+	[lw_ScanEnvironmentEntity].[ScanResultId],
+	[detail].[ComponentVersionId],
+	[detail].[ScanEnvironmentId],
+	[a_ComponentVersion].[Id],
+	[a_ComponentVersion].[Type],
+	[a_ComponentVersion].[Version]
+FROM
+	(
+		SELECT DISTINCT
+			[a_ScanEnvironment].[ScanResultId]
+		FROM
+			[ScanResultEntity] [x]
+				LEFT JOIN [ScanEnvironmentEntity] [a_ScanEnvironment] ON [x].[Id] = [a_ScanEnvironment].[ScanResultId]
+		WHERE
+			[x].[BranchId] = @id
+	) [lw_ScanEnvironmentEntity]
+		INNER JOIN [ScanEnvironmentComponentVersionsEntity] [detail] ON [lw_ScanEnvironmentEntity].[ScanResultId] = [detail].[ScanEnvironmentId]
+		LEFT JOIN [ComponentVersionEntity] [a_ComponentVersion] ON [detail].[ComponentVersionId] = [a_ComponentVersion].[Id]
+
+2026-11-06T13:01:38.723+03:00 TRACE Query Execution Time (AfterExecute): 00:00:00.0017243
+
+2026-11-06T13:01:38.723+03:00 TRACE Total Execution Time (Completed): 00:00:00.0062654. Rows Count: 0.
+
+2026-11-06T13:01:38.723+03:00 TRACE BeforeExecute
+DisposeTransaction
+2026-11-06T13:01:38.723+03:00 TRACE Query Execution Time (AfterExecute): 00:00:00.0010480
+
+2026-11-06T13:01:38.737+03:00 TRACE BeforeExecute
+--  SQLite.MS SQLite
+DECLARE @id  -- Guid
+SET     @id = X'95E2A4189854384A99BBB887242BEFC0'
+
+SELECT
+	[x].[Id],
+	[x].[ScanChainId],
+	[x].[ProjectId],
+	[x].[BranchId],
+	[x].[SettingsId],
+	[x].[Version],
+	[x].[ScanDate],
+	[x].[PreviousScanResultId],
+	[x].[IsRunFromQueue],
+	[a_Progress].[ScanResultId],
+	[a_Progress].[Stage],
+	[a_Progress].[SubStage],
+	[a_Progress].[Value],
+	[a_Statistic].[ScanResultId],
+	[a_Statistic].[State],
+	[a_Statistic].[PolicyState],
+	[a_Statistic].[ScanDurationRaw],
+	[a_Statistic].[HighLevelVulnerabilityCount],
+	[a_Statistic].[MediumLevelVulnerabilityCount],
+	[a_Statistic].[LowLevelVulnerabilityCount],
+	[a_Statistic].[PotentialVulnerabilityCount],
+	[a_Statistic].[TotalBlackBoxVulnerabilityCount],
+	[a_Statistic].[TotalStaticVulnerabilityCount],
+	[a_Statistic].[TotalVulnerabilityCount],
+	[a_Statistic].[TotalFileCount],
+	[a_Statistic].[TotalUrlCount],
+	[a_Statistic].[ScannedUrlCount],
+	[a_Statistic].[ScannedFileCount],
+	[a_ScanEnvironment].[ScanResultId],
+	[a_ScanEnvironment].[InfrastructureVersionId],
+	[a_ScanEnvironment].[InstallatorVersionId],
+	[a_ScanEnvironment].[ClientVersionId],
+	[a_ScanEnvironment].[PmHash],
+	[a_ScanEnvironment].[FullRescanOnNewFilesAdded],
+	[a_InfrastructureVersion].[Id],
+	[a_InfrastructureVersion].[Type],
+	[a_InfrastructureVersion].[Version],
+	[a_InstallatorVersion].[Id],
+	[a_InstallatorVersion].[Type],
+	[a_InstallatorVersion].[Version],
+	[a_ClientVersion].[Id],
+	[a_ClientVersion].[Type],
+	[a_ClientVersion].[Version]
+FROM
+	[ScanResultEntity] [x]
+		LEFT JOIN [ScanResultProgressEntity] [a_Progress] ON [x].[Id] = [a_Progress].[ScanResultId]
+		LEFT JOIN [ScanResultStatisticEntity] [a_Statistic] ON [x].[Id] = [a_Statistic].[ScanResultId]
+		LEFT JOIN [ScanEnvironmentEntity] [a_ScanEnvironment] ON [x].[Id] = [a_ScanEnvironment].[ScanResultId]
+		LEFT JOIN [ComponentVersionEntity] [a_ClientVersion] ON [a_ScanEnvironment].[ClientVersionId] = [a_ClientVersion].[Id]
+		LEFT JOIN [ComponentVersionEntity] [a_InstallatorVersion] ON [a_ScanEnvironment].[InstallatorVersionId] = [a_InstallatorVersion].[Id]
+		LEFT JOIN [ComponentVersionEntity] [a_InfrastructureVersion] ON [a_ScanEnvironment].[InfrastructureVersionId] = [a_InfrastructureVersion].[Id]
+WHERE
+	[x].[BranchId] = @id
+
+2026-11-06T13:01:38.737+03:00 TRACE Query Execution Time (AfterExecute): 00:00:00.0019411
+
+2026-11-06T13:01:38.737+03:00 TRACE Total Execution Time (Completed): 00:00:00.0040253. Rows Count: 0.
+
+2026-11-06T13:01:38.849+03:00 TRACE BeforeExecute
+--  SQLite.MS SQLite (asynchronously)
+DECLARE @isSuppressed  -- Boolean
+SET     @isSuppressed = 0
+
+SELECT
+	[x].[ScanResultId],
+	[x].[Level],
+	Sum([x].[Count])
+FROM
+	[IssueStatisticEntity] [x]
+WHERE
+	1 = 0 AND [x].[State] <> 2 AND [x].[IsSuppressed] = @isSuppressed
+GROUP BY
+	[x].[ScanResultId],
+	[x].[Level]
+
+2026-11-06T13:01:38.849+03:00 TRACE Query Execution Time (AfterExecute) (async): 00:00:00.0053457
+
+2026-11-06T13:01:38.849+03:00 TRACE Total Execution Time (Completed) (async): 00:00:00.0237992. Rows Count: 0.
+
+2026-11-06T13:01:38.862+03:00 TRACE BeforeExecute
+--  SQLite.MS SQLite (asynchronously)
+DECLARE @projectId  -- Guid
+SET     @projectId = X'9AACB8FF1EB6DD44AC78A34B234E707A'
+DECLARE @take  -- Int32
+SET     @take = 1
+
+SELECT
+	[x].[Id],
+	[x].[ProjectId],
+	[x].[Name],
+	[x].[Description],
+	[x].[LastScanDate],
+	[x].[LastSyncDate],
+	[x].[CreationDate],
+	[x].[SourcesSettingsId],
+	[x].[IsWorking]
+FROM
+	[BranchEntity] [x]
+WHERE
+	[x].[ProjectId] = @projectId
+ORDER BY
+	[x].[IsWorking] DESC,
+	[x].[CreationDate]
+LIMIT @take
+
+2026-11-06T13:01:38.862+03:00 TRACE Query Execution Time (AfterExecute) (async): 00:00:00.0017049
+
+2026-11-06T13:01:38.862+03:00 TRACE Total Execution Time (Completed) (async): 00:00:00.0033341. Rows Count: 0.
+
+2026-11-06T13:01:38.887+03:00 TRACE BeforeExecute
+BeginTransaction(Serializable)
+2026-11-06T13:01:38.887+03:00 TRACE Query Execution Time (AfterExecute): 00:00:00.0016136
+
+2026-11-06T13:01:38.890+03:00 TRACE BeforeExecute
+--  SQLite.MS SQLite
+
+SELECT
+	[lw_AssistantTipEntity].[Id],
+	[detail].[IssueHash],
+	[detail].[AssistantTipEntityId],
+	[detail].[Status]
+FROM
+	[AssistantTipEntity] [lw_AssistantTipEntity]
+		INNER JOIN [AssistantTipIssueEntity] [detail] ON [lw_AssistantTipEntity].[Id] = [detail].[AssistantTipEntityId]
+
+2026-11-06T13:01:38.890+03:00 TRACE Query Execution Time (AfterExecute): 00:00:00.0016012
+
+2026-11-06T13:01:38.890+03:00 TRACE Total Execution Time (Completed): 00:00:00.0030671. Rows Count: 0.
+
+2026-11-06T13:01:38.890+03:00 TRACE BeforeExecute
+DisposeTransaction
+2026-11-06T13:01:38.890+03:00 TRACE Query Execution Time (AfterExecute): 00:00:00.0014233
+
+2026-11-06T13:01:38.890+03:00 TRACE BeforeExecute
+--  SQLite.MS SQLite
+
+SELECT
+	[t1].[Id],
+	[t1].[BranchId],
+	[t1].[Type],
+	[t1].[State],
+	[t1].[Metadata],
+	[t1].[UniqueIssuesCount]
+FROM
+	[AssistantTipEntity] [t1]
+
+2026-11-06T13:01:38.890+03:00 TRACE Query Execution Time (AfterExecute): 00:00:00.0014204
+
+2026-11-06T13:01:38.890+03:00 TRACE Total Execution Time (Completed): 00:00:00.0026118. Rows Count: 0.
+
+2026-11-06T13:01:38.925+03:00 TRACE BeforeExecute
+--  SQLite.MS SQLite (asynchronously)
+DECLARE @projectId  -- Guid
+SET     @projectId = X'9AACB8FF1EB6DD44AC78A34B234E707A'
+DECLARE @take  -- Int32
+SET     @take = 1
+
+SELECT
+	[x].[Id],
+	[x].[ProjectId],
+	[x].[Name],
+	[x].[Description],
+	[x].[LastScanDate],
+	[x].[LastSyncDate],
+	[x].[CreationDate],
+	[x].[SourcesSettingsId],
+	[x].[IsWorking]
+FROM
+	[BranchEntity] [x]
+WHERE
+	[x].[ProjectId] = @projectId
+ORDER BY
+	[x].[IsWorking] DESC,
+	[x].[CreationDate]
+LIMIT @take
+
+2026-11-06T13:01:38.925+03:00 TRACE Query Execution Time (AfterExecute) (async): 00:00:00.0025638
+
+2026-11-06T13:01:38.925+03:00 TRACE Total Execution Time (Completed) (async): 00:00:00.0041243. Rows Count: 0.
+
+2026-11-06T13:01:38.925+03:00 TRACE BeforeExecute
+BeginTransaction(Serializable)
+2026-11-06T13:01:38.925+03:00 TRACE Query Execution Time (AfterExecute): 00:00:00.0021273
+
+2026-11-06T13:01:38.925+03:00 TRACE BeforeExecute
+--  SQLite.MS SQLite
+
+SELECT
+	[lw_AssistantTipEntity].[Id],
+	[detail].[IssueHash],
+	[detail].[AssistantTipEntityId],
+	[detail].[Status]
+FROM
+	[AssistantTipEntity] [lw_AssistantTipEntity]
+		INNER JOIN [AssistantTipIssueEntity] [detail] ON [lw_AssistantTipEntity].[Id] = [detail].[AssistantTipEntityId]
+
+2026-11-06T13:01:38.925+03:00 TRACE Query Execution Time (AfterExecute): 00:00:00.0016068
+
+2026-11-06T13:01:38.938+03:00 TRACE Total Execution Time (Completed): 00:00:00.0028152. Rows Count: 0.
+
+2026-11-06T13:01:38.938+03:00 TRACE BeforeExecute
+DisposeTransaction
+2026-11-06T13:01:38.938+03:00 TRACE Query Execution Time (AfterExecute): 00:00:00.0012185
+
+2026-11-06T13:01:38.938+03:00 TRACE BeforeExecute
+--  SQLite.MS SQLite
+
+SELECT
+	[t1].[Id],
+	[t1].[BranchId],
+	[t1].[Type],
+	[t1].[State],
+	[t1].[Metadata],
+	[t1].[UniqueIssuesCount]
+FROM
+	[AssistantTipEntity] [t1]
+
+2026-11-06T13:01:38.938+03:00 TRACE Query Execution Time (AfterExecute): 00:00:00.0022347
+
+2026-11-06T13:01:38.938+03:00 TRACE Total Execution Time (Completed): 00:00:00.0033941. Rows Count: 0.
+
+2026-11-06T13:01:39.001+03:00 TRACE BeforeExecute
+--  SQLite.MS SQLite (asynchronously)
+DECLARE @projectId  -- Guid
+SET     @projectId = X'9AACB8FF1EB6DD44AC78A34B234E707A'
+DECLARE @take  -- Int32
+SET     @take = 1
+
+SELECT
+	[x].[Id],
+	[x].[ProjectId],
+	[x].[Name],
+	[x].[Description],
+	[x].[LastScanDate],
+	[x].[LastSyncDate],
+	[x].[CreationDate],
+	[x].[SourcesSettingsId],
+	[x].[IsWorking]
+FROM
+	[BranchEntity] [x]
+WHERE
+	[x].[ProjectId] = @projectId
+ORDER BY
+	[x].[IsWorking] DESC,
+	[x].[CreationDate]
+LIMIT @take
+
+2026-11-06T13:01:39.001+03:00 TRACE Query Execution Time (AfterExecute) (async): 00:00:00.0016497
+
+2026-11-06T13:01:39.001+03:00 TRACE Total Execution Time (Completed) (async): 00:00:00.0030892. Rows Count: 0.
+
+2026-11-06T13:01:39.081+03:00 TRACE BeforeExecute
+BeginTransactionAsync(Serializable)
+2026-11-06T13:01:39.081+03:00 TRACE Query Execution Time (AfterExecute) (async): 00:00:00.0039901
+
+2026-11-06T13:01:39.100+03:00 TRACE BeforeExecute
+--  SQLite.MS SQLite (asynchronously)
+DECLARE @id  -- Guid
+SET     @id = X'95E2A4189854384A99BBB887242BEFC0'
+DECLARE @take  -- Int32
+SET     @take = 1
+
+SELECT
+	[lw_ScanEnvironmentEntity].[ScanResultId],
+	[detail].[ComponentVersionId],
+	[detail].[ScanEnvironmentId],
+	[a_ComponentVersion].[Id],
+	[a_ComponentVersion].[Type],
+	[a_ComponentVersion].[Version]
+FROM
+	(
+		SELECT DISTINCT
+			[t1].[ScanResultId]
+		FROM
+			(
+				SELECT
+					[a_ScanEnvironment].[ScanResultId]
+				FROM
+					[ScanResultEntity] [x]
+						LEFT JOIN [ScanEnvironmentEntity] [a_ScanEnvironment] ON [x].[Id] = [a_ScanEnvironment].[ScanResultId]
+				WHERE
+					[x].[BranchId] = @id
+				ORDER BY
+					[x].[ScanDate] DESC
+				LIMIT @take
+			) [t1]
+	) [lw_ScanEnvironmentEntity]
+		INNER JOIN [ScanEnvironmentComponentVersionsEntity] [detail] ON [lw_ScanEnvironmentEntity].[ScanResultId] = [detail].[ScanEnvironmentId]
+		LEFT JOIN [ComponentVersionEntity] [a_ComponentVersion] ON [detail].[ComponentVersionId] = [a_ComponentVersion].[Id]
+
+2026-11-06T13:01:39.100+03:00 TRACE Query Execution Time (AfterExecute) (async): 00:00:00.0015998
+
+2026-11-06T13:01:39.100+03:00 TRACE Total Execution Time (Completed) (async): 00:00:00.0052503. Rows Count: 0.
+
+2026-11-06T13:01:39.100+03:00 TRACE BeforeExecute
+--  SQLite.MS SQLite (asynchronously)
+DECLARE @id  -- Guid
+SET     @id = X'95E2A4189854384A99BBB887242BEFC0'
+DECLARE @take  -- Int32
+SET     @take = 1
+
+SELECT
+	[x].[Id],
+	[x].[ScanChainId],
+	[x].[ProjectId],
+	[x].[BranchId],
+	[x].[SettingsId],
+	[x].[Version],
+	[x].[ScanDate],
+	[x].[PreviousScanResultId],
+	[x].[IsRunFromQueue],
+	[a_Progress].[ScanResultId],
+	[a_Progress].[Stage],
+	[a_Progress].[SubStage],
+	[a_Progress].[Value],
+	[a_Statistic].[ScanResultId],
+	[a_Statistic].[State],
+	[a_Statistic].[PolicyState],
+	[a_Statistic].[ScanDurationRaw],
+	[a_Statistic].[HighLevelVulnerabilityCount],
+	[a_Statistic].[MediumLevelVulnerabilityCount],
+	[a_Statistic].[LowLevelVulnerabilityCount],
+	[a_Statistic].[PotentialVulnerabilityCount],
+	[a_Statistic].[TotalBlackBoxVulnerabilityCount],
+	[a_Statistic].[TotalStaticVulnerabilityCount],
+	[a_Statistic].[TotalVulnerabilityCount],
+	[a_Statistic].[TotalFileCount],
+	[a_Statistic].[TotalUrlCount],
+	[a_Statistic].[ScannedUrlCount],
+	[a_Statistic].[ScannedFileCount],
+	[a_ScanEnvironment].[ScanResultId],
+	[a_ScanEnvironment].[InfrastructureVersionId],
+	[a_ScanEnvironment].[InstallatorVersionId],
+	[a_ScanEnvironment].[ClientVersionId],
+	[a_ScanEnvironment].[PmHash],
+	[a_ScanEnvironment].[FullRescanOnNewFilesAdded],
+	[a_InfrastructureVersion].[Id],
+	[a_InfrastructureVersion].[Type],
+	[a_InfrastructureVersion].[Version],
+	[a_InstallatorVersion].[Id],
+	[a_InstallatorVersion].[Type],
+	[a_InstallatorVersion].[Version],
+	[a_ClientVersion].[Id],
+	[a_ClientVersion].[Type],
+	[a_ClientVersion].[Version]
+FROM
+	[ScanResultEntity] [x]
+		LEFT JOIN [ScanResultProgressEntity] [a_Progress] ON [x].[Id] = [a_Progress].[ScanResultId]
+		LEFT JOIN [ScanResultStatisticEntity] [a_Statistic] ON [x].[Id] = [a_Statistic].[ScanResultId]
+		LEFT JOIN [ScanEnvironmentEntity] [a_ScanEnvironment] ON [x].[Id] = [a_ScanEnvironment].[ScanResultId]
+		LEFT JOIN [ComponentVersionEntity] [a_ClientVersion] ON [a_ScanEnvironment].[ClientVersionId] = [a_ClientVersion].[Id]
+		LEFT JOIN [ComponentVersionEntity] [a_InstallatorVersion] ON [a_ScanEnvironment].[InstallatorVersionId] = [a_InstallatorVersion].[Id]
+		LEFT JOIN [ComponentVersionEntity] [a_InfrastructureVersion] ON [a_ScanEnvironment].[InfrastructureVersionId] = [a_InfrastructureVersion].[Id]
+WHERE
+	[x].[BranchId] = @id
+ORDER BY
+	[x].[ScanDate] DESC
+LIMIT @take
+
+2026-11-06T13:01:39.100+03:00 TRACE Query Execution Time (AfterExecute) (async): 00:00:00.0019008
+
+2026-11-06T13:01:39.110+03:00 TRACE Total Execution Time (Completed) (async): 00:00:00.0041491. Rows Count: 0.
+
+2026-11-06T13:01:39.110+03:00 TRACE BeforeExecute
+DisposeTransactionAsync
+2026-11-06T13:01:39.110+03:00 TRACE Query Execution Time (AfterExecute) (async): 00:00:00.0032365
+
+2026-11-06T13:01:39.287+03:00 DEBUG Start notification client reconfiguration
+2026-11-06T13:01:39.885+03:00 DEBUG Success connect to notifications service. ClientId: 57ec1b44-d7ff-41f1-9928-bb833492357d
+2026-11-06T13:01:39.898+03:00 DEBUG Subscribe on notification 'SourceUpdated'
+2026-11-06T13:01:39.965+03:00 DEBUG Subscribe on notification 'SourceError'
+2026-11-06T13:01:39.965+03:00 DEBUG Subscribe on notification 'IssuesUpdated'
+2026-11-06T13:01:39.969+03:00 DEBUG Subscribe on notification 'ProjectPermissionsChanged'
+2026-11-06T13:01:39.969+03:00 DEBUG Subscribe on notification 'UserPermissionsChanged'
+2026-11-06T13:01:39.969+03:00 DEBUG Subscribe on notification 'ScanCompleted'
+2026-11-06T13:01:39.969+03:00 DEBUG Subscribe on notification 'ScanCompleted'
+2026-11-06T13:01:39.969+03:00 DEBUG Subscribe on notification 'ScanDequeued'
+2026-11-06T13:01:39.969+03:00 DEBUG Subscribe on notification 'ScanResultCreated'
+2026-11-06T13:01:39.985+03:00 DEBUG Subscribe on notification 'ScanProgress'
+2026-11-06T13:01:39.985+03:00 DEBUG Subscribe on notification 'ScanEnqueued'
+2026-11-06T13:01:39.985+03:00 DEBUG Subscribe on notification 'BranchDeleted'
+2026-11-06T13:01:39.985+03:00 DEBUG Subscribe on notification 'ProjectDeleted'
+2026-11-06T13:01:40.007+03:00 DEBUG Start checking connection to AIE with 'https://release-630-centos90-6230-release-6-3.aie.ptsecurity.ru/health/summary' uri
+2026-11-06T13:01:40.601+03:00 TRACE BeforeExecute
+--  SQLite.MS SQLite (asynchronously)
+DECLARE @localProjectId  -- Guid
+SET     @localProjectId = X'9AACB8FF1EB6DD44AC78A34B234E707A'
+DECLARE @take  -- Int32
+SET     @take = 2
+
+SELECT
+	[x].[LocalProjectId],
+	[x].[AieProjectId],
+	[x].[MappedDateTime],
+	[x].[SynchronizationType],
+	[x].[ShouldSynchronizeStatuses]
+FROM
+	[LocalToAieProjectsMapEntity] [x]
+WHERE
+	[x].[LocalProjectId] = @localProjectId
+LIMIT @take
+
+2026-11-06T13:01:40.601+03:00 TRACE Query Execution Time (AfterExecute) (async): 00:00:00.0017420
+
+2026-11-06T13:01:40.612+03:00 TRACE Total Execution Time (Completed) (async): 00:00:00.0115216. Rows Count: 1.
+
+2026-11-06T13:01:40.627+03:00 TRACE BeforeExecute
+--  SQLite.MS SQLite (asynchronously)
+DECLARE @localProjectId  -- Guid
+SET     @localProjectId = X'9AACB8FF1EB6DD44AC78A34B234E707A'
+
+SELECT
+	[x].[LocalBranchId],
+	[x].[AieBranchId],
+	[x].[LocalProjectId]
+FROM
+	[LocalToAieBranchesMapEntity] [x]
+WHERE
+	[x].[LocalProjectId] = @localProjectId
+
+2026-11-06T13:01:40.627+03:00 TRACE Query Execution Time (AfterExecute) (async): 00:00:00.0016144
+
+2026-11-06T13:01:40.627+03:00 TRACE Total Execution Time (Completed) (async): 00:00:00.0064968. Rows Count: 1.
+
+2026-11-06T13:01:41.070+03:00 TRACE BeforeExecute
+--  SQLite.MS SQLite (asynchronously)
+DECLARE @projectId  -- Guid
+SET     @projectId = X'9AACB8FF1EB6DD44AC78A34B234E707A'
+DECLARE @take  -- Int32
+SET     @take = 1
+
+SELECT
+	[x].[Id],
+	[x].[ProjectId],
+	[x].[Name],
+	[x].[Description],
+	[x].[LastScanDate],
+	[x].[LastSyncDate],
+	[x].[CreationDate],
+	[x].[SourcesSettingsId],
+	[x].[IsWorking]
+FROM
+	[BranchEntity] [x]
+WHERE
+	[x].[ProjectId] = @projectId
+ORDER BY
+	[x].[IsWorking] DESC,
+	[x].[CreationDate]
+LIMIT @take
+
+2026-11-06T13:01:41.070+03:00 TRACE Query Execution Time (AfterExecute) (async): 00:00:00.0022185
+
+2026-11-06T13:01:41.070+03:00 TRACE Total Execution Time (Completed) (async): 00:00:00.0035328. Rows Count: 0.
+
+2026-11-06T13:01:41.085+03:00 TRACE BeforeExecute
+--  SQLite.MS SQLite (asynchronously)
+DECLARE @projectId  -- Guid
+SET     @projectId = X'9AACB8FF1EB6DD44AC78A34B234E707A'
+DECLARE @take  -- Int32
+SET     @take = 1
+
+SELECT
+	[x].[Id],
+	[x].[ProjectId],
+	[x].[Name],
+	[x].[Description],
+	[x].[LastScanDate],
+	[x].[LastSyncDate],
+	[x].[CreationDate],
+	[x].[SourcesSettingsId],
+	[x].[IsWorking]
+FROM
+	[BranchEntity] [x]
+WHERE
+	[x].[ProjectId] = @projectId
+ORDER BY
+	[x].[IsWorking] DESC,
+	[x].[CreationDate]
+LIMIT @take
+
+2026-11-06T13:01:41.085+03:00 TRACE Query Execution Time (AfterExecute) (async): 00:00:00.0019295
+
+2026-11-06T13:01:41.085+03:00 TRACE Total Execution Time (Completed) (async): 00:00:00.0032977. Rows Count: 0.
+
+2026-11-06T13:01:41.085+03:00 DEBUG synchronization after map was skipped
+2026-11-06T13:01:41.278+03:00 TRACE BeforeExecute
+BeginTransactionAsync(Serializable)
+2026-11-06T13:01:41.278+03:00 TRACE Query Execution Time (AfterExecute) (async): 00:00:00.0017069
+
+2026-11-06T13:01:41.281+03:00 TRACE BeforeExecute
+--  SQLite.MS SQLite (asynchronously)
+DECLARE @id  -- Guid
+SET     @id = X'95E2A4189854384A99BBB887242BEFC0'
+DECLARE @take  -- Int32
+SET     @take = 1
+
+SELECT
+	[lw_ScanEnvironmentEntity].[ScanResultId],
+	[detail].[ComponentVersionId],
+	[detail].[ScanEnvironmentId],
+	[a_ComponentVersion].[Id],
+	[a_ComponentVersion].[Type],
+	[a_ComponentVersion].[Version]
+FROM
+	(
+		SELECT DISTINCT
+			[t1].[ScanResultId]
+		FROM
+			(
+				SELECT
+					[a_ScanEnvironment].[ScanResultId]
+				FROM
+					[ScanResultEntity] [x]
+						LEFT JOIN [ScanEnvironmentEntity] [a_ScanEnvironment] ON [x].[Id] = [a_ScanEnvironment].[ScanResultId]
+				WHERE
+					[x].[BranchId] = @id
+				ORDER BY
+					[x].[ScanDate] DESC
+				LIMIT @take
+			) [t1]
+	) [lw_ScanEnvironmentEntity]
+		INNER JOIN [ScanEnvironmentComponentVersionsEntity] [detail] ON [lw_ScanEnvironmentEntity].[ScanResultId] = [detail].[ScanEnvironmentId]
+		LEFT JOIN [ComponentVersionEntity] [a_ComponentVersion] ON [detail].[ComponentVersionId] = [a_ComponentVersion].[Id]
+
+2026-11-06T13:01:41.281+03:00 TRACE Query Execution Time (AfterExecute) (async): 00:00:00.0013561
+
+2026-11-06T13:01:41.281+03:00 TRACE Total Execution Time (Completed) (async): 00:00:00.0025549. Rows Count: 0.
+
+2026-11-06T13:01:41.281+03:00 TRACE BeforeExecute
+--  SQLite.MS SQLite (asynchronously)
+DECLARE @id  -- Guid
+SET     @id = X'95E2A4189854384A99BBB887242BEFC0'
+DECLARE @take  -- Int32
+SET     @take = 1
+
+SELECT
+	[x].[Id],
+	[x].[ScanChainId],
+	[x].[ProjectId],
+	[x].[BranchId],
+	[x].[SettingsId],
+	[x].[Version],
+	[x].[ScanDate],
+	[x].[PreviousScanResultId],
+	[x].[IsRunFromQueue],
+	[a_Progress].[ScanResultId],
+	[a_Progress].[Stage],
+	[a_Progress].[SubStage],
+	[a_Progress].[Value],
+	[a_Statistic].[ScanResultId],
+	[a_Statistic].[State],
+	[a_Statistic].[PolicyState],
+	[a_Statistic].[ScanDurationRaw],
+	[a_Statistic].[HighLevelVulnerabilityCount],
+	[a_Statistic].[MediumLevelVulnerabilityCount],
+	[a_Statistic].[LowLevelVulnerabilityCount],
+	[a_Statistic].[PotentialVulnerabilityCount],
+	[a_Statistic].[TotalBlackBoxVulnerabilityCount],
+	[a_Statistic].[TotalStaticVulnerabilityCount],
+	[a_Statistic].[TotalVulnerabilityCount],
+	[a_Statistic].[TotalFileCount],
+	[a_Statistic].[TotalUrlCount],
+	[a_Statistic].[ScannedUrlCount],
+	[a_Statistic].[ScannedFileCount],
+	[a_ScanEnvironment].[ScanResultId],
+	[a_ScanEnvironment].[InfrastructureVersionId],
+	[a_ScanEnvironment].[InstallatorVersionId],
+	[a_ScanEnvironment].[ClientVersionId],
+	[a_ScanEnvironment].[PmHash],
+	[a_ScanEnvironment].[FullRescanOnNewFilesAdded],
+	[a_InfrastructureVersion].[Id],
+	[a_InfrastructureVersion].[Type],
+	[a_InfrastructureVersion].[Version],
+	[a_InstallatorVersion].[Id],
+	[a_InstallatorVersion].[Type],
+	[a_InstallatorVersion].[Version],
+	[a_ClientVersion].[Id],
+	[a_ClientVersion].[Type],
+	[a_ClientVersion].[Version]
+FROM
+	[ScanResultEntity] [x]
+		LEFT JOIN [ScanResultProgressEntity] [a_Progress] ON [x].[Id] = [a_Progress].[ScanResultId]
+		LEFT JOIN [ScanResultStatisticEntity] [a_Statistic] ON [x].[Id] = [a_Statistic].[ScanResultId]
+		LEFT JOIN [ScanEnvironmentEntity] [a_ScanEnvironment] ON [x].[Id] = [a_ScanEnvironment].[ScanResultId]
+		LEFT JOIN [ComponentVersionEntity] [a_ClientVersion] ON [a_ScanEnvironment].[ClientVersionId] = [a_ClientVersion].[Id]
+		LEFT JOIN [ComponentVersionEntity] [a_InstallatorVersion] ON [a_ScanEnvironment].[InstallatorVersionId] = [a_InstallatorVersion].[Id]
+		LEFT JOIN [ComponentVersionEntity] [a_InfrastructureVersion] ON [a_ScanEnvironment].[InfrastructureVersionId] = [a_InfrastructureVersion].[Id]
+WHERE
+	[x].[BranchId] = @id
+ORDER BY
+	[x].[ScanDate] DESC
+LIMIT @take
+
+2026-11-06T13:01:41.281+03:00 TRACE Query Execution Time (AfterExecute) (async): 00:00:00.0014878
+
+2026-11-06T13:01:41.281+03:00 TRACE Total Execution Time (Completed) (async): 00:00:00.0033105. Rows Count: 0.
+
+2026-11-06T13:01:41.281+03:00 TRACE BeforeExecute
+DisposeTransactionAsync
+2026-11-06T13:01:41.281+03:00 TRACE Query Execution Time (AfterExecute) (async): 00:00:00.0012375
+
+2026-11-06T13:01:41.558+03:00 TRACE skipped statuses synchronization: EnterpriseIntegration.Exceptions.NoScanResultEnterpriseIntegrationException: no scan result in remote or local project
+   at EnterpriseIntegration.Services.Issues.IssuesStateSynchronizer.SyncStatusesFromEnterpriseInternalAsync(Guid localProjectId, Guid localBranchId, Nullable`1 expectedReconciliationGeneration, CancellationToken cancellationToken)
+   at EnterpriseIntegration.Services.Project.LocalToAieProjectMappingService.SyncStatusesFromEnterpriseAsync(Guid localProjectId, Guid localBranchId, CancellationToken cancellationToken)
+   at EnterpriseIntegration.Services.Project.LocalToAieProjectMappingService.InitializeProjectMapAsync(Guid localProjectId, CancellationToken cancellationToken)
+2026-11-06T13:01:41.625+03:00 TRACE BeforeExecute
+--  SQLite.MS SQLite (asynchronously)
+DECLARE @projectId  -- Guid
+SET     @projectId = X'9AACB8FF1EB6DD44AC78A34B234E707A'
+DECLARE @take  -- Int32
+SET     @take = 1
+
+SELECT
+	[x].[Id],
+	[x].[ProjectId],
+	[x].[Name],
+	[x].[Description],
+	[x].[LastScanDate],
+	[x].[LastSyncDate],
+	[x].[CreationDate],
+	[x].[SourcesSettingsId],
+	[x].[IsWorking]
+FROM
+	[BranchEntity] [x]
+WHERE
+	[x].[ProjectId] = @projectId
+ORDER BY
+	[x].[IsWorking] DESC,
+	[x].[CreationDate]
+LIMIT @take
+
+2026-11-06T13:01:41.642+03:00 TRACE Query Execution Time (AfterExecute) (async): 00:00:00.0017923
+
+2026-11-06T13:01:41.642+03:00 TRACE Total Execution Time (Completed) (async): 00:00:00.0031305. Rows Count: 0.
+
+2026-11-06T13:01:43.344+03:00  WARN Failed to fetch available models from http://localhost:12345/api/v1/models
+––– details ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+
+System.Net.Http.HttpRequestException: Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение. (localhost:12345)
+ ---> System.Net.Sockets.SocketException (10061): Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Net.Sockets.Socket.<ConnectAsync>g__WaitForConnectWithCancellation|285_0(AwaitableSocketAsyncEventArgs saea, ValueTask connectTask, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.InjectNewHttp11ConnectionAsync(QueueItem queueItem)
+   at System.Threading.Tasks.TaskCompletionSourceWithCancellation`1.WaitWithCancellationAsync(CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.DiagnosticsHandler.SendAsyncCore(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.<SendAsync>g__Core|83_0(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationTokenSource cts, Boolean disposeCts, CancellationTokenSource pendingRequestsCts, CancellationToken originalCancellationToken)
+   at Copilot.Providers.OpenAi.OpenAiCompatibleClient.GetAvailableModelsAsync()
+System.Net.Sockets.SocketException (10061): Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Net.Sockets.Socket.<ConnectAsync>g__WaitForConnectWithCancellation|285_0(AwaitableSocketAsyncEventArgs saea, ValueTask connectTask, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+2026-11-06T13:01:43.500+03:00  INFO listening for working branch changed
+2026-11-06T13:01:43.500+03:00 TRACE Sending heartbeat ping for WorkingBranchChangedMessage...
+2026-11-06T13:01:45.159+03:00 DEBUG Start checking connection to AIE with 'https://release-630-centos90-6230-release-6-3.aie.ptsecurity.ru/health/summary' uri
+2026-11-06T13:01:45.344+03:00 DEBUG Connection status to AIE status has not been changed. Status is 'True'
+2026-11-06T13:01:46.195+03:00 TRACE update feeds completed
+2026-11-06T13:01:48.516+03:00 TRACE Sending heartbeat ping for WorkingBranchChangedMessage...
+2026-11-06T13:01:50.354+03:00 DEBUG Start checking connection to AIE with 'https://release-630-centos90-6230-release-6-3.aie.ptsecurity.ru/health/summary' uri
+2026-11-06T13:01:50.490+03:00 DEBUG Connection status to AIE status has not been changed. Status is 'True'
+2026-11-06T13:01:50.828+03:00 TRACE BeforeExecute
+--  SQLite.MS SQLite (asynchronously)
+DECLARE @projectId  -- Guid
+SET     @projectId = X'9AACB8FF1EB6DD44AC78A34B234E707A'
+DECLARE @take  -- Int32
+SET     @take = 1
+
+SELECT
+	[x].[Id],
+	[x].[ProjectId],
+	[x].[Name],
+	[x].[Description],
+	[x].[LastScanDate],
+	[x].[LastSyncDate],
+	[x].[CreationDate],
+	[x].[SourcesSettingsId],
+	[x].[IsWorking]
+FROM
+	[BranchEntity] [x]
+WHERE
+	[x].[ProjectId] = @projectId
+ORDER BY
+	[x].[IsWorking] DESC,
+	[x].[CreationDate]
+LIMIT @take
+
+2026-11-06T13:01:50.828+03:00 TRACE Query Execution Time (AfterExecute) (async): 00:00:00.0015211
+
+2026-11-06T13:01:50.828+03:00 TRACE Total Execution Time (Completed) (async): 00:00:00.0027114. Rows Count: 0.
+
+2026-11-06T13:01:53.006+03:00 TRACE BeforeExecute
+--  SQLite.MS SQLite (asynchronously)
+DECLARE @projectId  -- Guid
+SET     @projectId = X'9AACB8FF1EB6DD44AC78A34B234E707A'
+DECLARE @take  -- Int32
+SET     @take = 1
+
+SELECT
+	[x].[Id],
+	[x].[ProjectId],
+	[x].[Name],
+	[x].[Description],
+	[x].[LastScanDate],
+	[x].[LastSyncDate],
+	[x].[CreationDate],
+	[x].[SourcesSettingsId],
+	[x].[IsWorking]
+FROM
+	[BranchEntity] [x]
+WHERE
+	[x].[ProjectId] = @projectId
+ORDER BY
+	[x].[IsWorking] DESC,
+	[x].[CreationDate]
+LIMIT @take
+
+2026-11-06T13:01:53.006+03:00 TRACE Query Execution Time (AfterExecute) (async): 00:00:00.0015592
+
+2026-11-06T13:01:53.006+03:00 TRACE Total Execution Time (Completed) (async): 00:00:00.0027665. Rows Count: 0.
+
+2026-11-06T13:01:53.532+03:00 TRACE Sending heartbeat ping for WorkingBranchChangedMessage...
+2026-11-06T13:01:54.467+03:00 TRACE Received notification '{}' message with id {}. Data:  SourceUpdated, 121d3198-ed7a-4663-87d2-45c56935f95b, {"ProjectId":"e56468b3-9836-46fe-a0b2-2ca1be4ee2a6","BranchId":"78cfee05-49b5-4aaa-8f65-ecde4a649c1a","Updater":{"TokenName":"","Email":"","UserName":"root"},"Id":"121d3198-ed7a-4663-87d2-45c56935f95b"}
+2026-11-06T13:01:55.502+03:00 TRACE Received notification '{}' message with id {}. Data:  ScanEnqueued, bda66c30-a5be-4e02-ad89-09729ef417ed, {"ProjectId":"e56468b3-9836-46fe-a0b2-2ca1be4ee2a6","BranchId":"78cfee05-49b5-4aaa-8f65-ecde4a649c1a","ScanType":1,"QueueItemId":"017fa22b-41cb-4005-bad2-a2a06d3fb692","Label":"From IDE","QueueDateTime":"2026-11-06T13:01:55.0543924+00:00","InitiatorType":0,"InitiatorId":"544cacaa-48bb-4a2f-a381-77e2207d79f9","Id":"bda66c30-a5be-4e02-ad89-09729ef417ed"}
+2026-11-06T13:01:55.502+03:00 DEBUG skip scan enqueued notification from agent: branch not found in scanned projects history
+2026-11-06T13:01:55.502+03:00 DEBUG Start checking connection to AIE with 'https://release-630-centos90-6230-release-6-3.aie.ptsecurity.ru/health/summary' uri
+2026-11-06T13:01:55.841+03:00 DEBUG Connection status to AIE status has not been changed. Status is 'True'
+2026-11-06T13:01:55.849+03:00 TRACE Received notification '{}' message with id {}. Data:  ScanResultCreated, 0905040a-7dcb-4bb3-b9af-a61bf187f775, {"ProjectId":"e56468b3-9836-46fe-a0b2-2ca1be4ee2a6","BranchId":"78cfee05-49b5-4aaa-8f65-ecde4a649c1a","ScanResultId":"0ebe767a-8a29-429b-acb4-5237341ee023","QueueItemId":"017fa22b-41cb-4005-bad2-a2a06d3fb692","Id":"0905040a-7dcb-4bb3-b9af-a61bf187f775"}
+2026-11-06T13:01:55.849+03:00 DEBUG  scan result created notification
+2026-11-06T13:01:55.893+03:00 TRACE Received notification '{}' message with id {}. Data:  ScanDequeued, 9324731e-8b47-40f0-a375-9fd6efdfdc96, {"ProjectId":"e56468b3-9836-46fe-a0b2-2ca1be4ee2a6","BranchId":"78cfee05-49b5-4aaa-8f65-ecde4a649c1a","ScanResultId":"0ebe767a-8a29-429b-acb4-5237341ee023","QueueItemId":"017fa22b-41cb-4005-bad2-a2a06d3fb692","Reason":1,"AgentInfo":{"Name":"release-630-centos90-2352-agent","Version":"6.3.0.2352","OperatingSystem":"Linux","IsDeleted":false},"DateTime":"2026-11-06T13:01:55.6195612+00:00","Id":"9324731e-8b47-40f0-a375-9fd6efdfdc96"}
+2026-11-06T13:01:56.437+03:00 TRACE Received notification '{}' message with id {}. Data:  ScanProgress, 589d76e4-5372-45d7-b30c-70d7c7506964, {"ProjectId":"e56468b3-9836-46fe-a0b2-2ca1be4ee2a6","BranchId":"78cfee05-49b5-4aaa-8f65-ecde4a649c1a","ScanResultId":"0ebe767a-8a29-429b-acb4-5237341ee023","Progress":{"Stage":2,"SubStage":"","Value":0},"Statistic":{"High":0,"Medium":0,"Low":0,"Potential":0,"Total":0,"FilesTotal":0,"FilesScanned":0,"UrlsScanned":0,"UrlsTotal":0,"ScanDuration":"PT00H00M00.669S","SecurityPolicyStatus":null},"AgentId":"3f45aa4f-a3b4-47c7-9ba3-aa1b63fcf53c","Id":"589d76e4-5372-45d7-b30c-70d7c7506964"}
+2026-11-06T13:01:56.448+03:00 DEBUG can progress notification
+2026-11-06T13:01:56.448+03:00 TRACE BeforeExecute
+--  SQLite.MS SQLite (asynchronously)
+DECLARE @projectId  -- Guid
+SET     @projectId = X'9AACB8FF1EB6DD44AC78A34B234E707A'
+DECLARE @take  -- Int32
+SET     @take = 1
+
+SELECT
+	[x].[Id],
+	[x].[ProjectId],
+	[x].[Name],
+	[x].[Description],
+	[x].[LastScanDate],
+	[x].[LastSyncDate],
+	[x].[CreationDate],
+	[x].[SourcesSettingsId],
+	[x].[IsWorking]
+FROM
+	[BranchEntity] [x]
+WHERE
+	[x].[ProjectId] = @projectId
+ORDER BY
+	[x].[IsWorking] DESC,
+	[x].[CreationDate]
+LIMIT @take
+
+2026-11-06T13:01:56.448+03:00 TRACE Query Execution Time (AfterExecute) (async): 00:00:00.0014885
+
+2026-11-06T13:01:56.453+03:00 TRACE Total Execution Time (Completed) (async): 00:00:00.0029844. Rows Count: 0.
+
+2026-11-06T13:01:56.470+03:00 TRACE Received notification '{}' message with id {}. Data:  ScanProgress, 67fc65cc-48f4-4c9b-ba73-3c4b7196490a, {"ProjectId":"e56468b3-9836-46fe-a0b2-2ca1be4ee2a6","BranchId":"78cfee05-49b5-4aaa-8f65-ecde4a649c1a","ScanResultId":"0ebe767a-8a29-429b-acb4-5237341ee023","Progress":{"Stage":2,"SubStage":"RestoreScanData","Value":0},"Statistic":{"High":0,"Medium":0,"Low":0,"Potential":0,"Total":0,"FilesTotal":0,"FilesScanned":0,"UrlsScanned":0,"UrlsTotal":0,"ScanDuration":"PT00H00M00.713S","SecurityPolicyStatus":null},"AgentId":"3f45aa4f-a3b4-47c7-9ba3-aa1b63fcf53c","Id":"67fc65cc-48f4-4c9b-ba73-3c4b7196490a"}
+2026-11-06T13:01:56.470+03:00 DEBUG can progress notification
+2026-11-06T13:01:56.470+03:00 TRACE BeforeExecute
+--  SQLite.MS SQLite (asynchronously)
+DECLARE @projectId  -- Guid
+SET     @projectId = X'9AACB8FF1EB6DD44AC78A34B234E707A'
+DECLARE @take  -- Int32
+SET     @take = 1
+
+SELECT
+	[x].[Id],
+	[x].[ProjectId],
+	[x].[Name],
+	[x].[Description],
+	[x].[LastScanDate],
+	[x].[LastSyncDate],
+	[x].[CreationDate],
+	[x].[SourcesSettingsId],
+	[x].[IsWorking]
+FROM
+	[BranchEntity] [x]
+WHERE
+	[x].[ProjectId] = @projectId
+ORDER BY
+	[x].[IsWorking] DESC,
+	[x].[CreationDate]
+LIMIT @take
+
+2026-11-06T13:01:56.485+03:00 TRACE Query Execution Time (AfterExecute) (async): 00:00:00.0018111
+
+2026-11-06T13:01:56.485+03:00 TRACE Total Execution Time (Completed) (async): 00:00:00.0029188. Rows Count: 0.
+
+2026-11-06T13:01:56.485+03:00 DEBUG skip scan progress notification: progress is stale, below threshold or already emitted
+2026-11-06T13:01:56.688+03:00 TRACE Received notification '{}' message with id {}. Data:  ScanProgress, 0f820298-3683-4de4-beeb-216d1c7326f8, {"ProjectId":"e56468b3-9836-46fe-a0b2-2ca1be4ee2a6","BranchId":"78cfee05-49b5-4aaa-8f65-ecde4a649c1a","ScanResultId":"0ebe767a-8a29-429b-acb4-5237341ee023","Progress":{"Stage":3,"SubStage":"","Value":0},"Statistic":{"High":0,"Medium":0,"Low":0,"Potential":0,"Total":0,"FilesTotal":0,"FilesScanned":0,"UrlsScanned":0,"UrlsTotal":0,"ScanDuration":"PT00H00M00.943S","SecurityPolicyStatus":null},"AgentId":"3f45aa4f-a3b4-47c7-9ba3-aa1b63fcf53c","Id":"0f820298-3683-4de4-beeb-216d1c7326f8"}
+2026-11-06T13:01:56.689+03:00 DEBUG can progress notification
+2026-11-06T13:01:56.689+03:00 TRACE BeforeExecute
+--  SQLite.MS SQLite (asynchronously)
+DECLARE @projectId  -- Guid
+SET     @projectId = X'9AACB8FF1EB6DD44AC78A34B234E707A'
+DECLARE @take  -- Int32
+SET     @take = 1
+
+SELECT
+	[x].[Id],
+	[x].[ProjectId],
+	[x].[Name],
+	[x].[Description],
+	[x].[LastScanDate],
+	[x].[LastSyncDate],
+	[x].[CreationDate],
+	[x].[SourcesSettingsId],
+	[x].[IsWorking]
+FROM
+	[BranchEntity] [x]
+WHERE
+	[x].[ProjectId] = @projectId
+ORDER BY
+	[x].[IsWorking] DESC,
+	[x].[CreationDate]
+LIMIT @take
+
+2026-11-06T13:01:56.689+03:00 TRACE Query Execution Time (AfterExecute) (async): 00:00:00.0013492
+
+2026-11-06T13:01:56.689+03:00 TRACE Total Execution Time (Completed) (async): 00:00:00.0023245. Rows Count: 0.
+
+2026-11-06T13:01:56.765+03:00 TRACE Received notification '{}' message with id {}. Data:  ScanProgress, 086d7aaf-c70a-4e11-acf4-0dfd88091229, {"ProjectId":"e56468b3-9836-46fe-a0b2-2ca1be4ee2a6","BranchId":"78cfee05-49b5-4aaa-8f65-ecde4a649c1a","ScanResultId":"0ebe767a-8a29-429b-acb4-5237341ee023","Progress":{"Stage":2,"SubStage":"RestoreScanData","Value":0},"Statistic":{"High":0,"Medium":0,"Low":0,"Potential":0,"Total":0,"FilesTotal":0,"FilesScanned":0,"UrlsScanned":0,"UrlsTotal":0,"ScanDuration":"PT00H00M01.078S","SecurityPolicyStatus":null},"AgentId":"3f45aa4f-a3b4-47c7-9ba3-aa1b63fcf53c","Id":"086d7aaf-c70a-4e11-acf4-0dfd88091229"}
+2026-11-06T13:01:56.766+03:00 DEBUG can progress notification
+2026-11-06T13:01:56.766+03:00 TRACE BeforeExecute
+--  SQLite.MS SQLite (asynchronously)
+DECLARE @projectId  -- Guid
+SET     @projectId = X'9AACB8FF1EB6DD44AC78A34B234E707A'
+DECLARE @take  -- Int32
+SET     @take = 1
+
+SELECT
+	[x].[Id],
+	[x].[ProjectId],
+	[x].[Name],
+	[x].[Description],
+	[x].[LastScanDate],
+	[x].[LastSyncDate],
+	[x].[CreationDate],
+	[x].[SourcesSettingsId],
+	[x].[IsWorking]
+FROM
+	[BranchEntity] [x]
+WHERE
+	[x].[ProjectId] = @projectId
+ORDER BY
+	[x].[IsWorking] DESC,
+	[x].[CreationDate]
+LIMIT @take
+
+2026-11-06T13:01:56.766+03:00 TRACE Query Execution Time (AfterExecute) (async): 00:00:00.0016578
+
+2026-11-06T13:01:56.766+03:00 TRACE Total Execution Time (Completed) (async): 00:00:00.0027878. Rows Count: 0.
+
+2026-11-06T13:01:56.820+03:00 TRACE Received notification '{}' message with id {}. Data:  ScanProgress, 028c66be-b134-4788-874d-070a78b1cd4b, {"ProjectId":"e56468b3-9836-46fe-a0b2-2ca1be4ee2a6","BranchId":"78cfee05-49b5-4aaa-8f65-ecde4a649c1a","ScanResultId":"0ebe767a-8a29-429b-acb4-5237341ee023","Progress":{"Stage":1,"SubStage":"","Value":0},"Statistic":{"High":0,"Medium":0,"Low":0,"Potential":0,"Total":0,"FilesTotal":0,"FilesScanned":0,"UrlsScanned":0,"UrlsTotal":0,"ScanDuration":"PT00H00M01.123S","SecurityPolicyStatus":null},"AgentId":"3f45aa4f-a3b4-47c7-9ba3-aa1b63fcf53c","Id":"028c66be-b134-4788-874d-070a78b1cd4b"}
+2026-11-06T13:01:56.820+03:00 DEBUG can progress notification
+2026-11-06T13:01:56.820+03:00 TRACE BeforeExecute
+--  SQLite.MS SQLite (asynchronously)
+DECLARE @projectId  -- Guid
+SET     @projectId = X'9AACB8FF1EB6DD44AC78A34B234E707A'
+DECLARE @take  -- Int32
+SET     @take = 1
+
+SELECT
+	[x].[Id],
+	[x].[ProjectId],
+	[x].[Name],
+	[x].[Description],
+	[x].[LastScanDate],
+	[x].[LastSyncDate],
+	[x].[CreationDate],
+	[x].[SourcesSettingsId],
+	[x].[IsWorking]
+FROM
+	[BranchEntity] [x]
+WHERE
+	[x].[ProjectId] = @projectId
+ORDER BY
+	[x].[IsWorking] DESC,
+	[x].[CreationDate]
+LIMIT @take
+
+2026-11-06T13:01:56.820+03:00 TRACE Query Execution Time (AfterExecute) (async): 00:00:00.0014790
+
+2026-11-06T13:01:56.820+03:00 TRACE Total Execution Time (Completed) (async): 00:00:00.0029162. Rows Count: 0.
+
+2026-11-06T13:01:56.968+03:00 TRACE Received notification '{}' message with id {}. Data:  ScanProgress, de0b785c-a477-4dba-bc3a-310b3f31b01a, {"ProjectId":"e56468b3-9836-46fe-a0b2-2ca1be4ee2a6","BranchId":"78cfee05-49b5-4aaa-8f65-ecde4a649c1a","ScanResultId":"0ebe767a-8a29-429b-acb4-5237341ee023","Progress":{"Stage":4,"SubStage":"","Value":0},"Statistic":{"High":0,"Medium":0,"Low":0,"Potential":0,"Total":0,"FilesTotal":27,"FilesScanned":0,"UrlsScanned":0,"UrlsTotal":0,"ScanDuration":"PT00H00M01.224S","SecurityPolicyStatus":null},"AgentId":"3f45aa4f-a3b4-47c7-9ba3-aa1b63fcf53c","Id":"de0b785c-a477-4dba-bc3a-310b3f31b01a"}
+2026-11-06T13:01:56.969+03:00 DEBUG can progress notification
+2026-11-06T13:01:56.969+03:00 TRACE BeforeExecute
+--  SQLite.MS SQLite (asynchronously)
+DECLARE @projectId  -- Guid
+SET     @projectId = X'9AACB8FF1EB6DD44AC78A34B234E707A'
+DECLARE @take  -- Int32
+SET     @take = 1
+
+SELECT
+	[x].[Id],
+	[x].[ProjectId],
+	[x].[Name],
+	[x].[Description],
+	[x].[LastScanDate],
+	[x].[LastSyncDate],
+	[x].[CreationDate],
+	[x].[SourcesSettingsId],
+	[x].[IsWorking]
+FROM
+	[BranchEntity] [x]
+WHERE
+	[x].[ProjectId] = @projectId
+ORDER BY
+	[x].[IsWorking] DESC,
+	[x].[CreationDate]
+LIMIT @take
+
+2026-11-06T13:01:56.969+03:00 TRACE Query Execution Time (AfterExecute) (async): 00:00:00.0015467
+
+2026-11-06T13:01:56.969+03:00 TRACE Total Execution Time (Completed) (async): 00:00:00.0033631. Rows Count: 0.
+
+2026-11-06T13:01:58.548+03:00 TRACE Sending heartbeat ping for WorkingBranchChangedMessage...
+2026-11-06T13:02:00.853+03:00 DEBUG Start checking connection to AIE with 'https://release-630-centos90-6230-release-6-3.aie.ptsecurity.ru/health/summary' uri
+2026-11-06T13:02:01.004+03:00 DEBUG Connection status to AIE status has not been changed. Status is 'True'
+2026-11-06T13:02:03.581+03:00 TRACE Sending heartbeat ping for WorkingBranchChangedMessage...
+2026-11-06T13:02:06.013+03:00 DEBUG Start checking connection to AIE with 'https://release-630-centos90-6230-release-6-3.aie.ptsecurity.ru/health/summary' uri
+2026-11-06T13:02:06.166+03:00 DEBUG Connection status to AIE status has not been changed. Status is 'True'
+2026-11-06T13:02:08.680+03:00 TRACE Sending heartbeat ping for WorkingBranchChangedMessage...
+2026-11-06T13:02:10.021+03:00 TRACE BeforeExecute
+--  SQLite.MS SQLite (asynchronously)
+DECLARE @projectId  -- Guid
+SET     @projectId = X'9AACB8FF1EB6DD44AC78A34B234E707A'
+DECLARE @take  -- Int32
+SET     @take = 1
+
+SELECT
+	[x].[Id],
+	[x].[ProjectId],
+	[x].[Name],
+	[x].[Description],
+	[x].[LastScanDate],
+	[x].[LastSyncDate],
+	[x].[CreationDate],
+	[x].[SourcesSettingsId],
+	[x].[IsWorking]
+FROM
+	[BranchEntity] [x]
+WHERE
+	[x].[ProjectId] = @projectId
+ORDER BY
+	[x].[IsWorking] DESC,
+	[x].[CreationDate]
+LIMIT @take
+
+2026-11-06T13:02:10.021+03:00 TRACE Query Execution Time (AfterExecute) (async): 00:00:00.0014702
+
+2026-11-06T13:02:10.021+03:00 TRACE Total Execution Time (Completed) (async): 00:00:00.0025257. Rows Count: 0.
+
+2026-11-06T13:02:11.171+03:00 DEBUG Start checking connection to AIE with 'https://release-630-centos90-6230-release-6-3.aie.ptsecurity.ru/health/summary' uri
+2026-11-06T13:02:11.326+03:00 DEBUG Connection status to AIE status has not been changed. Status is 'True'
+2026-11-06T13:02:13.690+03:00 TRACE Sending heartbeat ping for WorkingBranchChangedMessage...
+2026-11-06T13:02:16.336+03:00 DEBUG Start checking connection to AIE with 'https://release-630-centos90-6230-release-6-3.aie.ptsecurity.ru/health/summary' uri
+2026-11-06T13:02:18.709+03:00 TRACE Sending heartbeat ping for WorkingBranchChangedMessage...
+2026-11-06T13:02:23.732+03:00 TRACE Sending heartbeat ping for WorkingBranchChangedMessage...
+2026-11-06T13:02:28.734+03:00 TRACE Sending heartbeat ping for WorkingBranchChangedMessage...
+2026-11-06T13:02:33.750+03:00 TRACE Sending heartbeat ping for WorkingBranchChangedMessage...
+2026-11-06T13:02:38.770+03:00 TRACE Sending heartbeat ping for WorkingBranchChangedMessage...
+2026-11-06T13:02:40.008+03:00 TRACE BeforeExecute
+--  SQLite.MS SQLite (asynchronously)
+DECLARE @projectId  -- Guid
+SET     @projectId = X'9AACB8FF1EB6DD44AC78A34B234E707A'
+DECLARE @take  -- Int32
+SET     @take = 1
+
+SELECT
+	[x].[Id],
+	[x].[ProjectId],
+	[x].[Name],
+	[x].[Description],
+	[x].[LastScanDate],
+	[x].[LastSyncDate],
+	[x].[CreationDate],
+	[x].[SourcesSettingsId],
+	[x].[IsWorking]
+FROM
+	[BranchEntity] [x]
+WHERE
+	[x].[ProjectId] = @projectId
+ORDER BY
+	[x].[IsWorking] DESC,
+	[x].[CreationDate]
+LIMIT @take
+
+2026-11-06T13:02:40.008+03:00 TRACE Query Execution Time (AfterExecute) (async): 00:00:00.0015596
+
+2026-11-06T13:02:40.008+03:00 TRACE Total Execution Time (Completed) (async): 00:00:00.0032393. Rows Count: 0.
+
+2026-11-06T13:02:40.008+03:00 TRACE BeforeExecute
+--  SQLite.MS SQLite (asynchronously)
+DECLARE @projectId  -- Guid
+SET     @projectId = X'9AACB8FF1EB6DD44AC78A34B234E707A'
+DECLARE @take  -- Int32
+SET     @take = 1
+
+SELECT
+	[x].[Id],
+	[x].[ProjectId],
+	[x].[Name],
+	[x].[Description],
+	[x].[LastScanDate],
+	[x].[LastSyncDate],
+	[x].[CreationDate],
+	[x].[SourcesSettingsId],
+	[x].[IsWorking]
+FROM
+	[BranchEntity] [x]
+WHERE
+	[x].[ProjectId] = @projectId
+ORDER BY
+	[x].[IsWorking] DESC,
+	[x].[CreationDate]
+LIMIT @take
+
+2026-11-06T13:02:40.017+03:00 TRACE Query Execution Time (AfterExecute) (async): 00:00:00.0014212
+
+2026-11-06T13:02:40.017+03:00 TRACE Total Execution Time (Completed) (async): 00:00:00.0025415. Rows Count: 0.
+
+2026-11-06T13:02:43.766+03:00 TRACE Sending heartbeat ping for WorkingBranchChangedMessage...
+2026-11-06T13:02:48.155+03:00 DEBUG Check connection error
+––– details ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+
+System.Net.Http.HttpRequestException: Этот хост неизвестен. (release-630-centos90-6230-release-6-3.aie.ptsecurity.ru:443)
+ ---> System.Net.Sockets.SocketException (11001): Этот хост неизвестен.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Net.Sockets.Socket.<ConnectAsync>g__WaitForConnectWithCancellation|285_0(AwaitableSocketAsyncEventArgs saea, ValueTask connectTask, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.InjectNewHttp11ConnectionAsync(QueueItem queueItem)
+   at System.Threading.Tasks.TaskCompletionSourceWithCancellation`1.WaitWithCancellationAsync(CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.DiagnosticsHandler.SendAsyncCore(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.<SendAsync>g__Core|83_0(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationTokenSource cts, Boolean disposeCts, CancellationTokenSource pendingRequestsCts, CancellationToken originalCancellationToken)
+   at EnterpriseIntegration.Services.EnterpriseIntegrationLifecycleManager.CheckConnectionAsync(String hostUri, CancellationToken cancellationToken)
+System.Net.Sockets.SocketException (11001): Этот хост неизвестен.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Net.Sockets.Socket.<ConnectAsync>g__WaitForConnectWithCancellation|285_0(AwaitableSocketAsyncEventArgs saea, ValueTask connectTask, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+2026-11-06T13:02:48.162+03:00  WARN Connection to AIE was lost
+2026-11-06T13:02:48.783+03:00 TRACE Sending heartbeat ping for WorkingBranchChangedMessage...
+2026-11-06T13:02:53.191+03:00 DEBUG Start checking connection to AIE with 'https://release-630-centos90-6230-release-6-3.aie.ptsecurity.ru/health/summary' uri
+2026-11-06T13:02:53.191+03:00 DEBUG Check connection error
+––– details ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+
+System.Net.Http.HttpRequestException: Этот хост неизвестен. (release-630-centos90-6230-release-6-3.aie.ptsecurity.ru:443)
+ ---> System.Net.Sockets.SocketException (11001): Этот хост неизвестен.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Net.Sockets.Socket.<ConnectAsync>g__WaitForConnectWithCancellation|285_0(AwaitableSocketAsyncEventArgs saea, ValueTask connectTask, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.InjectNewHttp11ConnectionAsync(QueueItem queueItem)
+   at System.Threading.Tasks.TaskCompletionSourceWithCancellation`1.WaitWithCancellationAsync(CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.DiagnosticsHandler.SendAsyncCore(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.<SendAsync>g__Core|83_0(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationTokenSource cts, Boolean disposeCts, CancellationTokenSource pendingRequestsCts, CancellationToken originalCancellationToken)
+   at EnterpriseIntegration.Services.EnterpriseIntegrationLifecycleManager.CheckConnectionAsync(String hostUri, CancellationToken cancellationToken)
+System.Net.Sockets.SocketException (11001): Этот хост неизвестен.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Net.Sockets.Socket.<ConnectAsync>g__WaitForConnectWithCancellation|285_0(AwaitableSocketAsyncEventArgs saea, ValueTask connectTask, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+2026-11-06T13:02:53.191+03:00 DEBUG Connection status to AIE status has not been changed. Status is 'False'
+2026-11-06T13:02:53.801+03:00 TRACE Sending heartbeat ping for WorkingBranchChangedMessage...
+2026-11-06T13:02:58.216+03:00 DEBUG Start checking connection to AIE with 'https://release-630-centos90-6230-release-6-3.aie.ptsecurity.ru/health/summary' uri
+2026-11-06T13:02:58.225+03:00 DEBUG Check connection error
+––– details ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+
+System.Net.Http.HttpRequestException: Этот хост неизвестен. (release-630-centos90-6230-release-6-3.aie.ptsecurity.ru:443)
+ ---> System.Net.Sockets.SocketException (11001): Этот хост неизвестен.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Net.Sockets.Socket.<ConnectAsync>g__WaitForConnectWithCancellation|285_0(AwaitableSocketAsyncEventArgs saea, ValueTask connectTask, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.InjectNewHttp11ConnectionAsync(QueueItem queueItem)
+   at System.Threading.Tasks.TaskCompletionSourceWithCancellation`1.WaitWithCancellationAsync(CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.DiagnosticsHandler.SendAsyncCore(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.<SendAsync>g__Core|83_0(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationTokenSource cts, Boolean disposeCts, CancellationTokenSource pendingRequestsCts, CancellationToken originalCancellationToken)
+   at EnterpriseIntegration.Services.EnterpriseIntegrationLifecycleManager.CheckConnectionAsync(String hostUri, CancellationToken cancellationToken)
+System.Net.Sockets.SocketException (11001): Этот хост неизвестен.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Net.Sockets.Socket.<ConnectAsync>g__WaitForConnectWithCancellation|285_0(AwaitableSocketAsyncEventArgs saea, ValueTask connectTask, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+2026-11-06T13:02:58.225+03:00 DEBUG Connection status to AIE status has not been changed. Status is 'False'
+2026-11-06T13:02:58.807+03:00 TRACE Sending heartbeat ping for WorkingBranchChangedMessage...
+2026-11-06T13:03:03.234+03:00 DEBUG Start checking connection to AIE with 'https://release-630-centos90-6230-release-6-3.aie.ptsecurity.ru/health/summary' uri
+2026-11-06T13:03:03.234+03:00 DEBUG Check connection error
+––– details ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+
+System.Net.Http.HttpRequestException: Этот хост неизвестен. (release-630-centos90-6230-release-6-3.aie.ptsecurity.ru:443)
+ ---> System.Net.Sockets.SocketException (11001): Этот хост неизвестен.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Net.Sockets.Socket.<ConnectAsync>g__WaitForConnectWithCancellation|285_0(AwaitableSocketAsyncEventArgs saea, ValueTask connectTask, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.InjectNewHttp11ConnectionAsync(QueueItem queueItem)
+   at System.Threading.Tasks.TaskCompletionSourceWithCancellation`1.WaitWithCancellationAsync(CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.DiagnosticsHandler.SendAsyncCore(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.<SendAsync>g__Core|83_0(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationTokenSource cts, Boolean disposeCts, CancellationTokenSource pendingRequestsCts, CancellationToken originalCancellationToken)
+   at EnterpriseIntegration.Services.EnterpriseIntegrationLifecycleManager.CheckConnectionAsync(String hostUri, CancellationToken cancellationToken)
+System.Net.Sockets.SocketException (11001): Этот хост неизвестен.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Net.Sockets.Socket.<ConnectAsync>g__WaitForConnectWithCancellation|285_0(AwaitableSocketAsyncEventArgs saea, ValueTask connectTask, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+2026-11-06T13:03:03.234+03:00 DEBUG Connection status to AIE status has not been changed. Status is 'False'
+2026-11-06T13:03:03.827+03:00 TRACE Sending heartbeat ping for WorkingBranchChangedMessage...
+2026-11-06T13:03:08.261+03:00 DEBUG Start checking connection to AIE with 'https://release-630-centos90-6230-release-6-3.aie.ptsecurity.ru/health/summary' uri
+2026-11-06T13:03:08.271+03:00 DEBUG Check connection error
+––– details ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+
+System.Net.Http.HttpRequestException: Этот хост неизвестен. (release-630-centos90-6230-release-6-3.aie.ptsecurity.ru:443)
+ ---> System.Net.Sockets.SocketException (11001): Этот хост неизвестен.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Net.Sockets.Socket.<ConnectAsync>g__WaitForConnectWithCancellation|285_0(AwaitableSocketAsyncEventArgs saea, ValueTask connectTask, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.InjectNewHttp11ConnectionAsync(QueueItem queueItem)
+   at System.Threading.Tasks.TaskCompletionSourceWithCancellation`1.WaitWithCancellationAsync(CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.DiagnosticsHandler.SendAsyncCore(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.<SendAsync>g__Core|83_0(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationTokenSource cts, Boolean disposeCts, CancellationTokenSource pendingRequestsCts, CancellationToken originalCancellationToken)
+   at EnterpriseIntegration.Services.EnterpriseIntegrationLifecycleManager.CheckConnectionAsync(String hostUri, CancellationToken cancellationToken)
+System.Net.Sockets.SocketException (11001): Этот хост неизвестен.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Net.Sockets.Socket.<ConnectAsync>g__WaitForConnectWithCancellation|285_0(AwaitableSocketAsyncEventArgs saea, ValueTask connectTask, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+2026-11-06T13:03:08.271+03:00 DEBUG Connection status to AIE status has not been changed. Status is 'False'
+2026-11-06T13:03:08.854+03:00 TRACE Sending heartbeat ping for WorkingBranchChangedMessage...
+2026-11-06T13:03:13.279+03:00 DEBUG Start checking connection to AIE with 'https://release-630-centos90-6230-release-6-3.aie.ptsecurity.ru/health/summary' uri
+2026-11-06T13:03:13.286+03:00 DEBUG Check connection error
+––– details ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+
+System.Net.Http.HttpRequestException: Этот хост неизвестен. (release-630-centos90-6230-release-6-3.aie.ptsecurity.ru:443)
+ ---> System.Net.Sockets.SocketException (11001): Этот хост неизвестен.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Net.Sockets.Socket.<ConnectAsync>g__WaitForConnectWithCancellation|285_0(AwaitableSocketAsyncEventArgs saea, ValueTask connectTask, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.InjectNewHttp11ConnectionAsync(QueueItem queueItem)
+   at System.Threading.Tasks.TaskCompletionSourceWithCancellation`1.WaitWithCancellationAsync(CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.DiagnosticsHandler.SendAsyncCore(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.<SendAsync>g__Core|83_0(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationTokenSource cts, Boolean disposeCts, CancellationTokenSource pendingRequestsCts, CancellationToken originalCancellationToken)
+   at EnterpriseIntegration.Services.EnterpriseIntegrationLifecycleManager.CheckConnectionAsync(String hostUri, CancellationToken cancellationToken)
+System.Net.Sockets.SocketException (11001): Этот хост неизвестен.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Net.Sockets.Socket.<ConnectAsync>g__WaitForConnectWithCancellation|285_0(AwaitableSocketAsyncEventArgs saea, ValueTask connectTask, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+2026-11-06T13:03:13.286+03:00 DEBUG Connection status to AIE status has not been changed. Status is 'False'
+2026-11-06T13:03:13.886+03:00 TRACE Sending heartbeat ping for WorkingBranchChangedMessage...
+2026-11-06T13:03:18.292+03:00 DEBUG Start checking connection to AIE with 'https://release-630-centos90-6230-release-6-3.aie.ptsecurity.ru/health/summary' uri
+2026-11-06T13:03:18.292+03:00 DEBUG Check connection error
+––– details ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+
+System.Net.Http.HttpRequestException: Этот хост неизвестен. (release-630-centos90-6230-release-6-3.aie.ptsecurity.ru:443)
+ ---> System.Net.Sockets.SocketException (11001): Этот хост неизвестен.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Net.Sockets.Socket.<ConnectAsync>g__WaitForConnectWithCancellation|285_0(AwaitableSocketAsyncEventArgs saea, ValueTask connectTask, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.InjectNewHttp11ConnectionAsync(QueueItem queueItem)
+   at System.Threading.Tasks.TaskCompletionSourceWithCancellation`1.WaitWithCancellationAsync(CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.DiagnosticsHandler.SendAsyncCore(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.<SendAsync>g__Core|83_0(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationTokenSource cts, Boolean disposeCts, CancellationTokenSource pendingRequestsCts, CancellationToken originalCancellationToken)
+   at EnterpriseIntegration.Services.EnterpriseIntegrationLifecycleManager.CheckConnectionAsync(String hostUri, CancellationToken cancellationToken)
+System.Net.Sockets.SocketException (11001): Этот хост неизвестен.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Net.Sockets.Socket.<ConnectAsync>g__WaitForConnectWithCancellation|285_0(AwaitableSocketAsyncEventArgs saea, ValueTask connectTask, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+2026-11-06T13:03:18.303+03:00 DEBUG Connection status to AIE status has not been changed. Status is 'False'
+2026-11-06T13:03:18.906+03:00 TRACE Sending heartbeat ping for WorkingBranchChangedMessage...
+2026-11-06T13:03:23.315+03:00 DEBUG Start checking connection to AIE with 'https://release-630-centos90-6230-release-6-3.aie.ptsecurity.ru/health/summary' uri
+2026-11-06T13:03:23.315+03:00 DEBUG Check connection error
+––– details ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+
+System.Net.Http.HttpRequestException: Этот хост неизвестен. (release-630-centos90-6230-release-6-3.aie.ptsecurity.ru:443)
+ ---> System.Net.Sockets.SocketException (11001): Этот хост неизвестен.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Net.Sockets.Socket.<ConnectAsync>g__WaitForConnectWithCancellation|285_0(AwaitableSocketAsyncEventArgs saea, ValueTask connectTask, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.InjectNewHttp11ConnectionAsync(QueueItem queueItem)
+   at System.Threading.Tasks.TaskCompletionSourceWithCancellation`1.WaitWithCancellationAsync(CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.DiagnosticsHandler.SendAsyncCore(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.<SendAsync>g__Core|83_0(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationTokenSource cts, Boolean disposeCts, CancellationTokenSource pendingRequestsCts, CancellationToken originalCancellationToken)
+   at EnterpriseIntegration.Services.EnterpriseIntegrationLifecycleManager.CheckConnectionAsync(String hostUri, CancellationToken cancellationToken)
+System.Net.Sockets.SocketException (11001): Этот хост неизвестен.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Net.Sockets.Socket.<ConnectAsync>g__WaitForConnectWithCancellation|285_0(AwaitableSocketAsyncEventArgs saea, ValueTask connectTask, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+2026-11-06T13:03:23.328+03:00 DEBUG Connection status to AIE status has not been changed. Status is 'False'
+2026-11-06T13:03:23.926+03:00 TRACE Sending heartbeat ping for WorkingBranchChangedMessage...
+2026-11-06T13:03:28.342+03:00 DEBUG Start checking connection to AIE with 'https://release-630-centos90-6230-release-6-3.aie.ptsecurity.ru/health/summary' uri
+2026-11-06T13:03:28.347+03:00 DEBUG Check connection error
+––– details ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+
+System.Net.Http.HttpRequestException: Этот хост неизвестен. (release-630-centos90-6230-release-6-3.aie.ptsecurity.ru:443)
+ ---> System.Net.Sockets.SocketException (11001): Этот хост неизвестен.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Net.Sockets.Socket.<ConnectAsync>g__WaitForConnectWithCancellation|285_0(AwaitableSocketAsyncEventArgs saea, ValueTask connectTask, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.InjectNewHttp11ConnectionAsync(QueueItem queueItem)
+   at System.Threading.Tasks.TaskCompletionSourceWithCancellation`1.WaitWithCancellationAsync(CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.DiagnosticsHandler.SendAsyncCore(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.<SendAsync>g__Core|83_0(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationTokenSource cts, Boolean disposeCts, CancellationTokenSource pendingRequestsCts, CancellationToken originalCancellationToken)
+   at EnterpriseIntegration.Services.EnterpriseIntegrationLifecycleManager.CheckConnectionAsync(String hostUri, CancellationToken cancellationToken)
+System.Net.Sockets.SocketException (11001): Этот хост неизвестен.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Net.Sockets.Socket.<ConnectAsync>g__WaitForConnectWithCancellation|285_0(AwaitableSocketAsyncEventArgs saea, ValueTask connectTask, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+2026-11-06T13:03:28.347+03:00 DEBUG Connection status to AIE status has not been changed. Status is 'False'
+2026-11-06T13:03:28.945+03:00 TRACE Sending heartbeat ping for WorkingBranchChangedMessage...
+2026-11-06T13:03:33.359+03:00 DEBUG Start checking connection to AIE with 'https://release-630-centos90-6230-release-6-3.aie.ptsecurity.ru/health/summary' uri
+2026-11-06T13:03:33.371+03:00 DEBUG Check connection error
+––– details ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+
+System.Net.Http.HttpRequestException: Этот хост неизвестен. (release-630-centos90-6230-release-6-3.aie.ptsecurity.ru:443)
+ ---> System.Net.Sockets.SocketException (11001): Этот хост неизвестен.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Net.Sockets.Socket.<ConnectAsync>g__WaitForConnectWithCancellation|285_0(AwaitableSocketAsyncEventArgs saea, ValueTask connectTask, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.InjectNewHttp11ConnectionAsync(QueueItem queueItem)
+   at System.Threading.Tasks.TaskCompletionSourceWithCancellation`1.WaitWithCancellationAsync(CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.DiagnosticsHandler.SendAsyncCore(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.<SendAsync>g__Core|83_0(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationTokenSource cts, Boolean disposeCts, CancellationTokenSource pendingRequestsCts, CancellationToken originalCancellationToken)
+   at EnterpriseIntegration.Services.EnterpriseIntegrationLifecycleManager.CheckConnectionAsync(String hostUri, CancellationToken cancellationToken)
+System.Net.Sockets.SocketException (11001): Этот хост неизвестен.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Net.Sockets.Socket.<ConnectAsync>g__WaitForConnectWithCancellation|285_0(AwaitableSocketAsyncEventArgs saea, ValueTask connectTask, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+2026-11-06T13:03:33.371+03:00 DEBUG Connection status to AIE status has not been changed. Status is 'False'
+2026-11-06T13:03:33.952+03:00 TRACE Sending heartbeat ping for WorkingBranchChangedMessage...
+2026-11-06T13:03:38.380+03:00 DEBUG Start checking connection to AIE with 'https://release-630-centos90-6230-release-6-3.aie.ptsecurity.ru/health/summary' uri
+2026-11-06T13:03:38.380+03:00 DEBUG Check connection error
+––– details ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+
+System.Net.Http.HttpRequestException: Этот хост неизвестен. (release-630-centos90-6230-release-6-3.aie.ptsecurity.ru:443)
+ ---> System.Net.Sockets.SocketException (11001): Этот хост неизвестен.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Net.Sockets.Socket.<ConnectAsync>g__WaitForConnectWithCancellation|285_0(AwaitableSocketAsyncEventArgs saea, ValueTask connectTask, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.InjectNewHttp11ConnectionAsync(QueueItem queueItem)
+   at System.Threading.Tasks.TaskCompletionSourceWithCancellation`1.WaitWithCancellationAsync(CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.DiagnosticsHandler.SendAsyncCore(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.<SendAsync>g__Core|83_0(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationTokenSource cts, Boolean disposeCts, CancellationTokenSource pendingRequestsCts, CancellationToken originalCancellationToken)
+   at EnterpriseIntegration.Services.EnterpriseIntegrationLifecycleManager.CheckConnectionAsync(String hostUri, CancellationToken cancellationToken)
+System.Net.Sockets.SocketException (11001): Этот хост неизвестен.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Net.Sockets.Socket.<ConnectAsync>g__WaitForConnectWithCancellation|285_0(AwaitableSocketAsyncEventArgs saea, ValueTask connectTask, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+2026-11-06T13:03:38.380+03:00 DEBUG Connection status to AIE status has not been changed. Status is 'False'
+2026-11-06T13:03:38.973+03:00 TRACE Sending heartbeat ping for WorkingBranchChangedMessage...
+2026-11-06T13:03:43.398+03:00 DEBUG Start checking connection to AIE with 'https://release-630-centos90-6230-release-6-3.aie.ptsecurity.ru/health/summary' uri
+2026-11-06T13:03:43.398+03:00 DEBUG Check connection error
+––– details ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+
+System.Net.Http.HttpRequestException: Этот хост неизвестен. (release-630-centos90-6230-release-6-3.aie.ptsecurity.ru:443)
+ ---> System.Net.Sockets.SocketException (11001): Этот хост неизвестен.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Net.Sockets.Socket.<ConnectAsync>g__WaitForConnectWithCancellation|285_0(AwaitableSocketAsyncEventArgs saea, ValueTask connectTask, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.InjectNewHttp11ConnectionAsync(QueueItem queueItem)
+   at System.Threading.Tasks.TaskCompletionSourceWithCancellation`1.WaitWithCancellationAsync(CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.DiagnosticsHandler.SendAsyncCore(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.<SendAsync>g__Core|83_0(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationTokenSource cts, Boolean disposeCts, CancellationTokenSource pendingRequestsCts, CancellationToken originalCancellationToken)
+   at EnterpriseIntegration.Services.EnterpriseIntegrationLifecycleManager.CheckConnectionAsync(String hostUri, CancellationToken cancellationToken)
+System.Net.Sockets.SocketException (11001): Этот хост неизвестен.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Net.Sockets.Socket.<ConnectAsync>g__WaitForConnectWithCancellation|285_0(AwaitableSocketAsyncEventArgs saea, ValueTask connectTask, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+2026-11-06T13:03:43.407+03:00 DEBUG Connection status to AIE status has not been changed. Status is 'False'
+2026-11-06T13:03:43.991+03:00 TRACE Sending heartbeat ping for WorkingBranchChangedMessage...
+2026-11-06T13:03:48.419+03:00 DEBUG Start checking connection to AIE with 'https://release-630-centos90-6230-release-6-3.aie.ptsecurity.ru/health/summary' uri
+2026-11-06T13:03:48.428+03:00 DEBUG Check connection error
+––– details ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+
+System.Net.Http.HttpRequestException: Этот хост неизвестен. (release-630-centos90-6230-release-6-3.aie.ptsecurity.ru:443)
+ ---> System.Net.Sockets.SocketException (11001): Этот хост неизвестен.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Net.Sockets.Socket.<ConnectAsync>g__WaitForConnectWithCancellation|285_0(AwaitableSocketAsyncEventArgs saea, ValueTask connectTask, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.InjectNewHttp11ConnectionAsync(QueueItem queueItem)
+   at System.Threading.Tasks.TaskCompletionSourceWithCancellation`1.WaitWithCancellationAsync(CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.DiagnosticsHandler.SendAsyncCore(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.<SendAsync>g__Core|83_0(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationTokenSource cts, Boolean disposeCts, CancellationTokenSource pendingRequestsCts, CancellationToken originalCancellationToken)
+   at EnterpriseIntegration.Services.EnterpriseIntegrationLifecycleManager.CheckConnectionAsync(String hostUri, CancellationToken cancellationToken)
+System.Net.Sockets.SocketException (11001): Этот хост неизвестен.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Net.Sockets.Socket.<ConnectAsync>g__WaitForConnectWithCancellation|285_0(AwaitableSocketAsyncEventArgs saea, ValueTask connectTask, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+2026-11-06T13:03:48.428+03:00 DEBUG Connection status to AIE status has not been changed. Status is 'False'
+2026-11-06T13:03:48.998+03:00 TRACE Sending heartbeat ping for WorkingBranchChangedMessage...
+2026-11-06T13:03:53.439+03:00 DEBUG Start checking connection to AIE with 'https://release-630-centos90-6230-release-6-3.aie.ptsecurity.ru/health/summary' uri
+2026-11-06T13:03:53.439+03:00 DEBUG Check connection error
+––– details ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+
+System.Net.Http.HttpRequestException: Этот хост неизвестен. (release-630-centos90-6230-release-6-3.aie.ptsecurity.ru:443)
+ ---> System.Net.Sockets.SocketException (11001): Этот хост неизвестен.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Net.Sockets.Socket.<ConnectAsync>g__WaitForConnectWithCancellation|285_0(AwaitableSocketAsyncEventArgs saea, ValueTask connectTask, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.InjectNewHttp11ConnectionAsync(QueueItem queueItem)
+   at System.Threading.Tasks.TaskCompletionSourceWithCancellation`1.WaitWithCancellationAsync(CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.DiagnosticsHandler.SendAsyncCore(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.<SendAsync>g__Core|83_0(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationTokenSource cts, Boolean disposeCts, CancellationTokenSource pendingRequestsCts, CancellationToken originalCancellationToken)
+   at EnterpriseIntegration.Services.EnterpriseIntegrationLifecycleManager.CheckConnectionAsync(String hostUri, CancellationToken cancellationToken)
+System.Net.Sockets.SocketException (11001): Этот хост неизвестен.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Net.Sockets.Socket.<ConnectAsync>g__WaitForConnectWithCancellation|285_0(AwaitableSocketAsyncEventArgs saea, ValueTask connectTask, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+2026-11-06T13:03:53.439+03:00 DEBUG Connection status to AIE status has not been changed. Status is 'False'
+2026-11-06T13:03:54.016+03:00 TRACE Sending heartbeat ping for WorkingBranchChangedMessage...
+2026-11-06T13:03:58.472+03:00 DEBUG Start checking connection to AIE with 'https://release-630-centos90-6230-release-6-3.aie.ptsecurity.ru/health/summary' uri
+2026-11-06T13:03:58.472+03:00 DEBUG Check connection error
+––– details ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+
+System.Net.Http.HttpRequestException: Этот хост неизвестен. (release-630-centos90-6230-release-6-3.aie.ptsecurity.ru:443)
+ ---> System.Net.Sockets.SocketException (11001): Этот хост неизвестен.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Net.Sockets.Socket.<ConnectAsync>g__WaitForConnectWithCancellation|285_0(AwaitableSocketAsyncEventArgs saea, ValueTask connectTask, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.InjectNewHttp11ConnectionAsync(QueueItem queueItem)
+   at System.Threading.Tasks.TaskCompletionSourceWithCancellation`1.WaitWithCancellationAsync(CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.DiagnosticsHandler.SendAsyncCore(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.<SendAsync>g__Core|83_0(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationTokenSource cts, Boolean disposeCts, CancellationTokenSource pendingRequestsCts, CancellationToken originalCancellationToken)
+   at EnterpriseIntegration.Services.EnterpriseIntegrationLifecycleManager.CheckConnectionAsync(String hostUri, CancellationToken cancellationToken)
+System.Net.Sockets.SocketException (11001): Этот хост неизвестен.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Net.Sockets.Socket.<ConnectAsync>g__WaitForConnectWithCancellation|285_0(AwaitableSocketAsyncEventArgs saea, ValueTask connectTask, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+2026-11-06T13:03:58.472+03:00 DEBUG Connection status to AIE status has not been changed. Status is 'False'
+2026-11-06T13:03:59.027+03:00 TRACE Sending heartbeat ping for WorkingBranchChangedMessage...
+2026-11-06T13:04:03.491+03:00 DEBUG Start checking connection to AIE with 'https://release-630-centos90-6230-release-6-3.aie.ptsecurity.ru/health/summary' uri
+2026-11-06T13:04:03.502+03:00 DEBUG Check connection error
+––– details ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+
+System.Net.Http.HttpRequestException: Этот хост неизвестен. (release-630-centos90-6230-release-6-3.aie.ptsecurity.ru:443)
+ ---> System.Net.Sockets.SocketException (11001): Этот хост неизвестен.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Net.Sockets.Socket.<ConnectAsync>g__WaitForConnectWithCancellation|285_0(AwaitableSocketAsyncEventArgs saea, ValueTask connectTask, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.InjectNewHttp11ConnectionAsync(QueueItem queueItem)
+   at System.Threading.Tasks.TaskCompletionSourceWithCancellation`1.WaitWithCancellationAsync(CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.DiagnosticsHandler.SendAsyncCore(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.<SendAsync>g__Core|83_0(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationTokenSource cts, Boolean disposeCts, CancellationTokenSource pendingRequestsCts, CancellationToken originalCancellationToken)
+   at EnterpriseIntegration.Services.EnterpriseIntegrationLifecycleManager.CheckConnectionAsync(String hostUri, CancellationToken cancellationToken)
+System.Net.Sockets.SocketException (11001): Этот хост неизвестен.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Net.Sockets.Socket.<ConnectAsync>g__WaitForConnectWithCancellation|285_0(AwaitableSocketAsyncEventArgs saea, ValueTask connectTask, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+2026-11-06T13:04:03.502+03:00 DEBUG Connection status to AIE status has not been changed. Status is 'False'
+2026-11-06T13:04:04.038+03:00 TRACE Sending heartbeat ping for WorkingBranchChangedMessage...
+2026-11-06T13:04:08.519+03:00 DEBUG Start checking connection to AIE with 'https://release-630-centos90-6230-release-6-3.aie.ptsecurity.ru/health/summary' uri
+2026-11-06T13:04:08.519+03:00 DEBUG Check connection error
+––– details ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+
+System.Net.Http.HttpRequestException: Этот хост неизвестен. (release-630-centos90-6230-release-6-3.aie.ptsecurity.ru:443)
+ ---> System.Net.Sockets.SocketException (11001): Этот хост неизвестен.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Net.Sockets.Socket.<ConnectAsync>g__WaitForConnectWithCancellation|285_0(AwaitableSocketAsyncEventArgs saea, ValueTask connectTask, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.InjectNewHttp11ConnectionAsync(QueueItem queueItem)
+   at System.Threading.Tasks.TaskCompletionSourceWithCancellation`1.WaitWithCancellationAsync(CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.DiagnosticsHandler.SendAsyncCore(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.<SendAsync>g__Core|83_0(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationTokenSource cts, Boolean disposeCts, CancellationTokenSource pendingRequestsCts, CancellationToken originalCancellationToken)
+   at EnterpriseIntegration.Services.EnterpriseIntegrationLifecycleManager.CheckConnectionAsync(String hostUri, CancellationToken cancellationToken)
+System.Net.Sockets.SocketException (11001): Этот хост неизвестен.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Net.Sockets.Socket.<ConnectAsync>g__WaitForConnectWithCancellation|285_0(AwaitableSocketAsyncEventArgs saea, ValueTask connectTask, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+2026-11-06T13:04:08.519+03:00 DEBUG Connection status to AIE status has not been changed. Status is 'False'
+2026-11-06T13:04:09.048+03:00 TRACE Sending heartbeat ping for WorkingBranchChangedMessage...
+2026-11-06T13:04:13.533+03:00 DEBUG Start checking connection to AIE with 'https://release-630-centos90-6230-release-6-3.aie.ptsecurity.ru/health/summary' uri
+2026-11-06T13:04:13.533+03:00 DEBUG Check connection error
+––– details ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+
+System.Net.Http.HttpRequestException: Этот хост неизвестен. (release-630-centos90-6230-release-6-3.aie.ptsecurity.ru:443)
+ ---> System.Net.Sockets.SocketException (11001): Этот хост неизвестен.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Net.Sockets.Socket.<ConnectAsync>g__WaitForConnectWithCancellation|285_0(AwaitableSocketAsyncEventArgs saea, ValueTask connectTask, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.InjectNewHttp11ConnectionAsync(QueueItem queueItem)
+   at System.Threading.Tasks.TaskCompletionSourceWithCancellation`1.WaitWithCancellationAsync(CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.DiagnosticsHandler.SendAsyncCore(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.<SendAsync>g__Core|83_0(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationTokenSource cts, Boolean disposeCts, CancellationTokenSource pendingRequestsCts, CancellationToken originalCancellationToken)
+   at EnterpriseIntegration.Services.EnterpriseIntegrationLifecycleManager.CheckConnectionAsync(String hostUri, CancellationToken cancellationToken)
+System.Net.Sockets.SocketException (11001): Этот хост неизвестен.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Net.Sockets.Socket.<ConnectAsync>g__WaitForConnectWithCancellation|285_0(AwaitableSocketAsyncEventArgs saea, ValueTask connectTask, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+2026-11-06T13:04:13.547+03:00 DEBUG Connection status to AIE status has not been changed. Status is 'False'
+2026-11-06T13:04:14.063+03:00 TRACE Sending heartbeat ping for WorkingBranchChangedMessage...
+2026-11-06T13:04:18.560+03:00 DEBUG Start checking connection to AIE with 'https://release-630-centos90-6230-release-6-3.aie.ptsecurity.ru/health/summary' uri
+2026-11-06T13:04:19.088+03:00 TRACE Sending heartbeat ping for WorkingBranchChangedMessage...
+2026-11-06T13:04:24.092+03:00 TRACE Sending heartbeat ping for WorkingBranchChangedMessage...
+2026-11-06T13:04:29.115+03:00 TRACE Sending heartbeat ping for WorkingBranchChangedMessage...
+2026-11-06T13:04:34.133+03:00 TRACE Sending heartbeat ping for WorkingBranchChangedMessage...
+2026-11-06T13:04:39.150+03:00 TRACE Sending heartbeat ping for WorkingBranchChangedMessage...
+2026-11-06T13:04:44.171+03:00 TRACE Sending heartbeat ping for WorkingBranchChangedMessage...
+2026-11-06T13:04:49.187+03:00 TRACE Sending heartbeat ping for WorkingBranchChangedMessage...
+2026-11-06T13:04:54.211+03:00 TRACE Sending heartbeat ping for WorkingBranchChangedMessage...
+2026-11-06T13:04:59.242+03:00 TRACE Sending heartbeat ping for WorkingBranchChangedMessage...
+2026-11-06T13:05:04.255+03:00 TRACE Sending heartbeat ping for WorkingBranchChangedMessage...
+2026-11-06T13:05:09.266+03:00 TRACE Sending heartbeat ping for WorkingBranchChangedMessage...
+2026-11-06T13:05:14.285+03:00 TRACE Sending heartbeat ping for WorkingBranchChangedMessage...
+2026-11-06T13:05:19.298+03:00 TRACE Sending heartbeat ping for WorkingBranchChangedMessage...
+2026-11-06T13:05:24.311+03:00 TRACE Sending heartbeat ping for WorkingBranchChangedMessage...
+2026-11-06T13:05:29.333+03:00 TRACE Sending heartbeat ping for WorkingBranchChangedMessage...
+2026-11-06T13:05:34.344+03:00 TRACE Sending heartbeat ping for WorkingBranchChangedMessage...
+2026-11-06T13:05:37.407+03:00 DEBUG Check connection error
+––– details ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+
+System.Net.Http.HttpRequestException: Этот хост неизвестен. (release-630-centos90-6230-release-6-3.aie.ptsecurity.ru:443)
+ ---> System.Net.Sockets.SocketException (11001): Этот хост неизвестен.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Net.Sockets.Socket.<ConnectAsync>g__WaitForConnectWithCancellation|285_0(AwaitableSocketAsyncEventArgs saea, ValueTask connectTask, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.InjectNewHttp11ConnectionAsync(QueueItem queueItem)
+   at System.Threading.Tasks.TaskCompletionSourceWithCancellation`1.WaitWithCancellationAsync(CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.DiagnosticsHandler.SendAsyncCore(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.<SendAsync>g__Core|83_0(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationTokenSource cts, Boolean disposeCts, CancellationTokenSource pendingRequestsCts, CancellationToken originalCancellationToken)
+   at EnterpriseIntegration.Services.EnterpriseIntegrationLifecycleManager.CheckConnectionAsync(String hostUri, CancellationToken cancellationToken)
+System.Net.Sockets.SocketException (11001): Этот хост неизвестен.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Net.Sockets.Socket.<ConnectAsync>g__WaitForConnectWithCancellation|285_0(AwaitableSocketAsyncEventArgs saea, ValueTask connectTask, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+2026-11-06T13:05:37.407+03:00 DEBUG Connection status to AIE status has not been changed. Status is 'False'
+2026-11-06T13:05:39.407+03:00 TRACE Sending heartbeat ping for WorkingBranchChangedMessage...
+2026-11-06T13:05:42.429+03:00 DEBUG Start checking connection to AIE with 'https://release-630-centos90-6230-release-6-3.aie.ptsecurity.ru/health/summary' uri
+2026-11-06T13:05:42.608+03:00  INFO Connection to AIE has been recovered
+2026-11-06T13:05:42.608+03:00 DEBUG Start notification client reconfiguration
+2026-11-06T13:05:43.052+03:00 DEBUG Success connect to notifications service. ClientId: 57ec1b44-d7ff-41f1-9928-bb833492357d
+2026-11-06T13:05:43.052+03:00 DEBUG Subscribe on notification 'SourceUpdated'
+2026-11-06T13:05:43.052+03:00 DEBUG Subscribe on notification 'SourceError'
+2026-11-06T13:05:43.052+03:00 DEBUG Subscribe on notification 'IssuesUpdated'
+2026-11-06T13:05:43.052+03:00 DEBUG Subscribe on notification 'ProjectPermissionsChanged'
+2026-11-06T13:05:43.052+03:00 DEBUG Subscribe on notification 'UserPermissionsChanged'
+2026-11-06T13:05:43.052+03:00 DEBUG Subscribe on notification 'ScanCompleted'
+2026-11-06T13:05:43.062+03:00 DEBUG Subscribe on notification 'ScanCompleted'
+2026-11-06T13:05:43.062+03:00 DEBUG Subscribe on notification 'ScanDequeued'
+2026-11-06T13:05:43.062+03:00 DEBUG Subscribe on notification 'ScanResultCreated'
+2026-11-06T13:05:43.062+03:00 DEBUG Subscribe on notification 'ScanProgress'
+2026-11-06T13:05:43.062+03:00 DEBUG Subscribe on notification 'ScanEnqueued'
+2026-11-06T13:05:43.078+03:00 DEBUG Subscribe on notification 'BranchDeleted'
+2026-11-06T13:05:43.078+03:00 DEBUG Subscribe on notification 'ProjectDeleted'
+2026-11-06T13:05:43.078+03:00 TRACE BeforeExecute
+--  SQLite.MS SQLite (asynchronously)
+DECLARE @projectId  -- Guid
+SET     @projectId = X'9AACB8FF1EB6DD44AC78A34B234E707A'
+DECLARE @take  -- Int32
+SET     @take = 1
+
+SELECT
+	[x].[Id],
+	[x].[ProjectId],
+	[x].[Name],
+	[x].[Description],
+	[x].[LastScanDate],
+	[x].[LastSyncDate],
+	[x].[CreationDate],
+	[x].[SourcesSettingsId],
+	[x].[IsWorking]
+FROM
+	[BranchEntity] [x]
+WHERE
+	[x].[ProjectId] = @projectId
+ORDER BY
+	[x].[IsWorking] DESC,
+	[x].[CreationDate]
+LIMIT @take
+
+2026-11-06T13:05:43.078+03:00 TRACE Query Execution Time (AfterExecute) (async): 00:00:00.0015182
+
+2026-11-06T13:05:43.078+03:00 TRACE Total Execution Time (Completed) (async): 00:00:00.0026790. Rows Count: 0.
+
+2026-11-06T13:05:43.078+03:00 DEBUG Start sync issues statuses
+2026-11-06T13:05:43.445+03:00 TRACE BeforeExecute
+BeginTransactionAsync(Serializable)
+2026-11-06T13:05:43.445+03:00 TRACE Query Execution Time (AfterExecute) (async): 00:00:00.0017293
+
+2026-11-06T13:05:43.445+03:00 TRACE BeforeExecute
+--  SQLite.MS SQLite (asynchronously)
+DECLARE @id  -- Guid
+SET     @id = X'95E2A4189854384A99BBB887242BEFC0'
+DECLARE @take  -- Int32
+SET     @take = 1
+
+SELECT
+	[lw_ScanEnvironmentEntity].[ScanResultId],
+	[detail].[ComponentVersionId],
+	[detail].[ScanEnvironmentId],
+	[a_ComponentVersion].[Id],
+	[a_ComponentVersion].[Type],
+	[a_ComponentVersion].[Version]
+FROM
+	(
+		SELECT DISTINCT
+			[t1].[ScanResultId]
+		FROM
+			(
+				SELECT
+					[a_ScanEnvironment].[ScanResultId]
+				FROM
+					[ScanResultEntity] [x]
+						LEFT JOIN [ScanEnvironmentEntity] [a_ScanEnvironment] ON [x].[Id] = [a_ScanEnvironment].[ScanResultId]
+				WHERE
+					[x].[BranchId] = @id
+				ORDER BY
+					[x].[ScanDate] DESC
+				LIMIT @take
+			) [t1]
+	) [lw_ScanEnvironmentEntity]
+		INNER JOIN [ScanEnvironmentComponentVersionsEntity] [detail] ON [lw_ScanEnvironmentEntity].[ScanResultId] = [detail].[ScanEnvironmentId]
+		LEFT JOIN [ComponentVersionEntity] [a_ComponentVersion] ON [detail].[ComponentVersionId] = [a_ComponentVersion].[Id]
+
+2026-11-06T13:05:43.445+03:00 TRACE Query Execution Time (AfterExecute) (async): 00:00:00.0019082
+
+2026-11-06T13:05:43.452+03:00 TRACE Total Execution Time (Completed) (async): 00:00:00.0035320. Rows Count: 0.
+
+2026-11-06T13:05:43.452+03:00 TRACE BeforeExecute
+--  SQLite.MS SQLite (asynchronously)
+DECLARE @id  -- Guid
+SET     @id = X'95E2A4189854384A99BBB887242BEFC0'
+DECLARE @take  -- Int32
+SET     @take = 1
+
+SELECT
+	[x].[Id],
+	[x].[ScanChainId],
+	[x].[ProjectId],
+	[x].[BranchId],
+	[x].[SettingsId],
+	[x].[Version],
+	[x].[ScanDate],
+	[x].[PreviousScanResultId],
+	[x].[IsRunFromQueue],
+	[a_Progress].[ScanResultId],
+	[a_Progress].[Stage],
+	[a_Progress].[SubStage],
+	[a_Progress].[Value],
+	[a_Statistic].[ScanResultId],
+	[a_Statistic].[State],
+	[a_Statistic].[PolicyState],
+	[a_Statistic].[ScanDurationRaw],
+	[a_Statistic].[HighLevelVulnerabilityCount],
+	[a_Statistic].[MediumLevelVulnerabilityCount],
+	[a_Statistic].[LowLevelVulnerabilityCount],
+	[a_Statistic].[PotentialVulnerabilityCount],
+	[a_Statistic].[TotalBlackBoxVulnerabilityCount],
+	[a_Statistic].[TotalStaticVulnerabilityCount],
+	[a_Statistic].[TotalVulnerabilityCount],
+	[a_Statistic].[TotalFileCount],
+	[a_Statistic].[TotalUrlCount],
+	[a_Statistic].[ScannedUrlCount],
+	[a_Statistic].[ScannedFileCount],
+	[a_ScanEnvironment].[ScanResultId],
+	[a_ScanEnvironment].[InfrastructureVersionId],
+	[a_ScanEnvironment].[InstallatorVersionId],
+	[a_ScanEnvironment].[ClientVersionId],
+	[a_ScanEnvironment].[PmHash],
+	[a_ScanEnvironment].[FullRescanOnNewFilesAdded],
+	[a_InfrastructureVersion].[Id],
+	[a_InfrastructureVersion].[Type],
+	[a_InfrastructureVersion].[Version],
+	[a_InstallatorVersion].[Id],
+	[a_InstallatorVersion].[Type],
+	[a_InstallatorVersion].[Version],
+	[a_ClientVersion].[Id],
+	[a_ClientVersion].[Type],
+	[a_ClientVersion].[Version]
+FROM
+	[ScanResultEntity] [x]
+		LEFT JOIN [ScanResultProgressEntity] [a_Progress] ON [x].[Id] = [a_Progress].[ScanResultId]
+		LEFT JOIN [ScanResultStatisticEntity] [a_Statistic] ON [x].[Id] = [a_Statistic].[ScanResultId]
+		LEFT JOIN [ScanEnvironmentEntity] [a_ScanEnvironment] ON [x].[Id] = [a_ScanEnvironment].[ScanResultId]
+		LEFT JOIN [ComponentVersionEntity] [a_ClientVersion] ON [a_ScanEnvironment].[ClientVersionId] = [a_ClientVersion].[Id]
+		LEFT JOIN [ComponentVersionEntity] [a_InstallatorVersion] ON [a_ScanEnvironment].[InstallatorVersionId] = [a_InstallatorVersion].[Id]
+		LEFT JOIN [ComponentVersionEntity] [a_InfrastructureVersion] ON [a_ScanEnvironment].[InfrastructureVersionId] = [a_InfrastructureVersion].[Id]
+WHERE
+	[x].[BranchId] = @id
+ORDER BY
+	[x].[ScanDate] DESC
+LIMIT @take
+
+2026-11-06T13:05:43.452+03:00 TRACE Query Execution Time (AfterExecute) (async): 00:00:00.0021803
+
+2026-11-06T13:05:43.452+03:00 TRACE Total Execution Time (Completed) (async): 00:00:00.0035632. Rows Count: 0.
+
+2026-11-06T13:05:43.452+03:00 TRACE BeforeExecute
+DisposeTransactionAsync
+2026-11-06T13:05:43.452+03:00 TRACE Query Execution Time (AfterExecute) (async): 00:00:00.0014740
+
+2026-11-06T13:05:43.614+03:00  WARN Attempt to check server connection was failed
+––– details ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+
+EnterpriseIntegration.Exceptions.NoScanResultEnterpriseIntegrationException: no scan result in remote or local project
+   at EnterpriseIntegration.Services.Issues.IssuesStateSynchronizer.SyncStatusesFromEnterpriseInternalAsync(Guid localProjectId, Guid localBranchId, Nullable`1 expectedReconciliationGeneration, CancellationToken cancellationToken)
+   at EnterpriseIntegration.Services.EnterpriseIntegrationLifecycleManager.<>c__DisplayClass26_0.<<ScheduleCheckingServerConnectionJobAsync>g__AfterHandleRecovering|0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at EnterpriseIntegration.Services.EnterpriseIntegrationFacade.HandleRecoverConnectionAsync(Func`1 afterHandleRecovering)
+   at EnterpriseIntegration.Services.EnterpriseIntegrationLifecycleManager.ScheduleCheckingServerConnectionJobAsync(String enterpriseUrl, CancellationToken cancellationToken)
+––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+2026-11-06T13:05:44.425+03:00 TRACE Sending heartbeat ping for WorkingBranchChangedMessage...
+2026-11-06T13:05:48.617+03:00 DEBUG Start checking connection to AIE with 'https://release-630-centos90-6230-release-6-3.aie.ptsecurity.ru/health/summary' uri
+2026-11-06T13:05:48.768+03:00 DEBUG Connection status to AIE status has not been changed. Status is 'True'
+2026-11-06T13:05:49.437+03:00 TRACE Sending heartbeat ping for WorkingBranchChangedMessage...
+2026-11-06T13:05:53.775+03:00 DEBUG Start checking connection to AIE with 'https://release-630-centos90-6230-release-6-3.aie.ptsecurity.ru/health/summary' uri
+2026-11-06T13:05:53.997+03:00 DEBUG Connection status to AIE status has not been changed. Status is 'True'
+2026-11-06T13:05:54.452+03:00 TRACE Sending heartbeat ping for WorkingBranchChangedMessage...
+2026-11-06T13:05:59.005+03:00 DEBUG Start checking connection to AIE with 'https://release-630-centos90-6230-release-6-3.aie.ptsecurity.ru/health/summary' uri
+2026-11-06T13:05:59.138+03:00 DEBUG Connection status to AIE status has not been changed. Status is 'True'
+2026-11-06T13:05:59.470+03:00 TRACE Sending heartbeat ping for WorkingBranchChangedMessage...
+2026-11-06T13:06:04.149+03:00 DEBUG Start checking connection to AIE with 'https://release-630-centos90-6230-release-6-3.aie.ptsecurity.ru/health/summary' uri
+2026-11-06T13:06:04.310+03:00 DEBUG Connection status to AIE status has not been changed. Status is 'True'
+2026-11-06T13:06:04.507+03:00 TRACE Sending heartbeat ping for WorkingBranchChangedMessage...
+2026-11-06T13:06:09.320+03:00 DEBUG Start checking connection to AIE with 'https://release-630-centos90-6230-release-6-3.aie.ptsecurity.ru/health/summary' uri
+2026-11-06T13:06:09.526+03:00 TRACE Sending heartbeat ping for WorkingBranchChangedMessage...
+2026-11-06T13:06:09.636+03:00 DEBUG Connection status to AIE status has not been changed. Status is 'True'
+2026-11-06T13:06:14.571+03:00 TRACE Sending heartbeat ping for WorkingBranchChangedMessage...
+2026-11-06T13:06:14.663+03:00 DEBUG Start checking connection to AIE with 'https://release-630-centos90-6230-release-6-3.aie.ptsecurity.ru/health/summary' uri
+2026-11-06T13:06:14.835+03:00 DEBUG Connection status to AIE status has not been changed. Status is 'True'
+2026-11-06T13:06:19.610+03:00 TRACE Sending heartbeat ping for WorkingBranchChangedMessage...
+2026-11-06T13:06:19.841+03:00 DEBUG Start checking connection to AIE with 'https://release-630-centos90-6230-release-6-3.aie.ptsecurity.ru/health/summary' uri
+2026-11-06T13:06:20.817+03:00 DEBUG Connection status to AIE status has not been changed. Status is 'True'
+2026-11-06T13:06:25.700+03:00 TRACE Sending heartbeat ping for WorkingBranchChangedMessage...
+2026-11-06T13:06:25.827+03:00 DEBUG Start checking connection to AIE with 'https://release-630-centos90-6230-release-6-3.aie.ptsecurity.ru/health/summary' uri
+2026-11-06T13:06:25.981+03:00 DEBUG Connection status to AIE status has not been changed. Status is 'True'
+2026-11-06T13:06:30.723+03:00 TRACE Sending heartbeat ping for WorkingBranchChangedMessage...
+2026-11-06T13:06:30.991+03:00 DEBUG Start checking connection to AIE with 'https://release-630-centos90-6230-release-6-3.aie.ptsecurity.ru/health/summary' uri
+2026-11-06T13:06:31.138+03:00 DEBUG Connection status to AIE status has not been changed. Status is 'True'
+2026-11-06T13:06:35.733+03:00 TRACE Sending heartbeat ping for WorkingBranchChangedMessage...
+2026-11-06T13:06:36.153+03:00 DEBUG Start checking connection to AIE with 'https://release-630-centos90-6230-release-6-3.aie.ptsecurity.ru/health/summary' uri
+2026-11-06T13:06:36.308+03:00 DEBUG Connection status to AIE status has not been changed. Status is 'True'
+2026-11-06T13:06:40.746+03:00 TRACE Sending heartbeat ping for WorkingBranchChangedMessage...
+2026-11-06T13:06:41.325+03:00 DEBUG Start checking connection to AIE with 'https://release-630-centos90-6230-release-6-3.aie.ptsecurity.ru/health/summary' uri
+2026-11-06T13:06:41.493+03:00 DEBUG Connection status to AIE status has not been changed. Status is 'True'
+2026-11-06T13:06:45.764+03:00 TRACE Sending heartbeat ping for WorkingBranchChangedMessage...
+2026-11-06T13:06:46.497+03:00 DEBUG Start checking connection to AIE with 'https://release-630-centos90-6230-release-6-3.aie.ptsecurity.ru/health/summary' uri
+2026-11-06T13:06:46.653+03:00 DEBUG Connection status to AIE status has not been changed. Status is 'True'
+2026-11-06T13:06:50.781+03:00 TRACE Sending heartbeat ping for WorkingBranchChangedMessage...
+2026-11-06T13:06:51.666+03:00 DEBUG Start checking connection to AIE with 'https://release-630-centos90-6230-release-6-3.aie.ptsecurity.ru/health/summary' uri
+2026-11-06T13:06:51.836+03:00 DEBUG Connection status to AIE status has not been changed. Status is 'True'
+2026-11-06T13:06:55.796+03:00 TRACE Sending heartbeat ping for WorkingBranchChangedMessage...
+2026-11-06T13:06:56.852+03:00 DEBUG Start checking connection to AIE with 'https://release-630-centos90-6230-release-6-3.aie.ptsecurity.ru/health/summary' uri
+2026-11-06T13:06:57.003+03:00 DEBUG Connection status to AIE status has not been changed. Status is 'True'
+2026-11-06T13:07:00.805+03:00 TRACE Sending heartbeat ping for WorkingBranchChangedMessage...
+2026-11-06T13:07:02.017+03:00 DEBUG Start checking connection to AIE with 'https://release-630-centos90-6230-release-6-3.aie.ptsecurity.ru/health/summary' uri
+2026-11-06T13:07:02.153+03:00 DEBUG Connection status to AIE status has not been changed. Status is 'True'
+2026-11-06T13:07:05.817+03:00 TRACE Sending heartbeat ping for WorkingBranchChangedMessage...
+2026-11-06T13:07:07.160+03:00 DEBUG Start checking connection to AIE with 'https://release-630-centos90-6230-release-6-3.aie.ptsecurity.ru/health/summary' uri
+2026-11-06T13:07:07.337+03:00 DEBUG Connection status to AIE status has not been changed. Status is 'True'
+2026-11-06T13:07:10.833+03:00 TRACE Sending heartbeat ping for WorkingBranchChangedMessage...
+2026-11-06T13:07:12.341+03:00 DEBUG Start checking connection to AIE with 'https://release-630-centos90-6230-release-6-3.aie.ptsecurity.ru/health/summary' uri
+2026-11-06T13:07:12.495+03:00 DEBUG Connection status to AIE status has not been changed. Status is 'True'
+2026-11-06T13:07:15.850+03:00 TRACE Sending heartbeat ping for WorkingBranchChangedMessage...
+2026-11-06T13:07:17.507+03:00 DEBUG Start checking connection to AIE with 'https://release-630-centos90-6230-release-6-3.aie.ptsecurity.ru/health/summary' uri
+2026-11-06T13:07:17.657+03:00 DEBUG Connection status to AIE status has not been changed. Status is 'True'
+2026-11-06T13:07:20.873+03:00 TRACE Sending heartbeat ping for WorkingBranchChangedMessage...
+2026-11-06T13:07:22.666+03:00 DEBUG Start checking connection to AIE with 'https://release-630-centos90-6230-release-6-3.aie.ptsecurity.ru/health/summary' uri
+2026-11-06T13:07:22.813+03:00 DEBUG Connection status to AIE status has not been changed. Status is 'True'
+2026-11-06T13:07:25.887+03:00 TRACE Sending heartbeat ping for WorkingBranchChangedMessage...
+2026-11-06T13:07:27.817+03:00 DEBUG Start checking connection to AIE with 'https://release-630-centos90-6230-release-6-3.aie.ptsecurity.ru/health/summary' uri
+2026-11-06T13:07:27.997+03:00 DEBUG Connection status to AIE status has not been changed. Status is 'True'
+2026-11-06T13:07:30.910+03:00 TRACE Sending heartbeat ping for WorkingBranchChangedMessage...
+2026-11-06T13:07:33.002+03:00 DEBUG Start checking connection to AIE with 'https://release-630-centos90-6230-release-6-3.aie.ptsecurity.ru/health/summary' uri
+2026-11-06T13:07:33.146+03:00 DEBUG Connection status to AIE status has not been changed. Status is 'True'
+2026-11-06T13:07:35.948+03:00 TRACE Sending heartbeat ping for WorkingBranchChangedMessage...
+2026-11-06T13:07:38.164+03:00 DEBUG Start checking connection to AIE with 'https://release-630-centos90-6230-release-6-3.aie.ptsecurity.ru/health/summary' uri
+2026-11-06T13:07:38.292+03:00 DEBUG Connection status to AIE status has not been changed. Status is 'True'
+2026-11-06T13:07:40.955+03:00 TRACE Sending heartbeat ping for WorkingBranchChangedMessage...
+2026-11-06T13:07:43.309+03:00 DEBUG Start checking connection to AIE with 'https://release-630-centos90-6230-release-6-3.aie.ptsecurity.ru/health/summary' uri
+2026-11-06T13:07:43.933+03:00 DEBUG Connection status to AIE status has not been changed. Status is 'True'
+2026-11-06T13:07:45.967+03:00 TRACE Sending heartbeat ping for WorkingBranchChangedMessage...
+2026-11-06T13:07:48.949+03:00 DEBUG Start checking connection to AIE with 'https://release-630-centos90-6230-release-6-3.aie.ptsecurity.ru/health/summary' uri
+2026-11-06T13:07:49.131+03:00 DEBUG Connection status to AIE status has not been changed. Status is 'True'
+2026-11-06T13:07:50.985+03:00 TRACE Sending heartbeat ping for WorkingBranchChangedMessage...
+2026-11-06T13:07:54.144+03:00 DEBUG Start checking connection to AIE with 'https://release-630-centos90-6230-release-6-3.aie.ptsecurity.ru/health/summary' uri
+2026-11-06T13:07:54.277+03:00 DEBUG Connection status to AIE status has not been changed. Status is 'True'
+2026-11-06T13:07:56.002+03:00 TRACE Sending heartbeat ping for WorkingBranchChangedMessage...
+2026-11-06T13:07:59.289+03:00 DEBUG Start checking connection to AIE with 'https://release-630-centos90-6230-release-6-3.aie.ptsecurity.ru/health/summary' uri
+2026-11-06T13:07:59.464+03:00 DEBUG Connection status to AIE status has not been changed. Status is 'True'
+2026-11-06T13:08:01.096+03:00 TRACE Sending heartbeat ping for WorkingBranchChangedMessage...
+2026-11-06T13:08:04.473+03:00 DEBUG Start checking connection to AIE with 'https://release-630-centos90-6230-release-6-3.aie.ptsecurity.ru/health/summary' uri
+2026-11-06T13:08:04.618+03:00 DEBUG Connection status to AIE status has not been changed. Status is 'True'
+2026-11-06T13:08:06.121+03:00 TRACE Sending heartbeat ping for WorkingBranchChangedMessage...
+2026-11-06T13:08:09.631+03:00 DEBUG Start checking connection to AIE with 'https://release-630-centos90-6230-release-6-3.aie.ptsecurity.ru/health/summary' uri
+2026-11-06T13:08:09.784+03:00 DEBUG Connection status to AIE status has not been changed. Status is 'True'
+2026-11-06T13:08:11.142+03:00 TRACE Sending heartbeat ping for WorkingBranchChangedMessage...
+2026-11-06T13:08:14.785+03:00 DEBUG Start checking connection to AIE with 'https://release-630-centos90-6230-release-6-3.aie.ptsecurity.ru/health/summary' uri
+2026-11-06T13:08:14.954+03:00 DEBUG Connection status to AIE status has not been changed. Status is 'True'
+2026-11-06T13:08:16.154+03:00 TRACE Sending heartbeat ping for WorkingBranchChangedMessage...
+2026-11-06T13:08:19.971+03:00 DEBUG Start checking connection to AIE with 'https://release-630-centos90-6230-release-6-3.aie.ptsecurity.ru/health/summary' uri
+2026-11-06T13:08:20.109+03:00 DEBUG Connection status to AIE status has not been changed. Status is 'True'
+2026-11-06T13:08:21.164+03:00 TRACE Sending heartbeat ping for WorkingBranchChangedMessage...
+2026-11-06T13:08:25.115+03:00 DEBUG Start checking connection to AIE with 'https://release-630-centos90-6230-release-6-3.aie.ptsecurity.ru/health/summary' uri
+2026-11-06T13:08:25.268+03:00 DEBUG Connection status to AIE status has not been changed. Status is 'True'
+2026-11-06T13:08:26.171+03:00 TRACE Sending heartbeat ping for WorkingBranchChangedMessage...
+2026-11-06T13:08:30.275+03:00 DEBUG Start checking connection to AIE with 'https://release-630-centos90-6230-release-6-3.aie.ptsecurity.ru/health/summary' uri
+2026-11-06T13:08:30.484+03:00 DEBUG Connection status to AIE status has not been changed. Status is 'True'
+2026-11-06T13:08:31.190+03:00 TRACE Sending heartbeat ping for WorkingBranchChangedMessage...
+2026-11-06T13:08:35.498+03:00 DEBUG Start checking connection to AIE with 'https://release-630-centos90-6230-release-6-3.aie.ptsecurity.ru/health/summary' uri
+2026-11-06T13:08:35.653+03:00 DEBUG Connection status to AIE status has not been changed. Status is 'True'
+2026-11-06T13:08:36.186+03:00 TRACE Sending heartbeat ping for WorkingBranchChangedMessage...
+2026-11-06T13:08:40.655+03:00 DEBUG Start checking connection to AIE with 'https://release-630-centos90-6230-release-6-3.aie.ptsecurity.ru/health/summary' uri
+2026-11-06T13:08:40.796+03:00 DEBUG Connection status to AIE status has not been changed. Status is 'True'
+2026-11-06T13:08:41.201+03:00 TRACE Sending heartbeat ping for WorkingBranchChangedMessage...
+2026-11-06T13:08:45.913+03:00 DEBUG Start checking connection to AIE with 'https://release-630-centos90-6230-release-6-3.aie.ptsecurity.ru/health/summary' uri
+2026-11-06T13:08:46.227+03:00 TRACE Sending heartbeat ping for WorkingBranchChangedMessage...
+2026-11-06T13:08:46.239+03:00 DEBUG Connection status to AIE status has not been changed. Status is 'True'
+2026-11-06T13:08:51.258+03:00 DEBUG Start checking connection to AIE with 'https://release-630-centos90-6230-release-6-3.aie.ptsecurity.ru/health/summary' uri
+2026-11-06T13:08:51.258+03:00 TRACE Sending heartbeat ping for WorkingBranchChangedMessage...
+2026-11-06T13:08:51.424+03:00 DEBUG Connection status to AIE status has not been changed. Status is 'True'
+2026-11-06T13:08:56.275+03:00 TRACE Sending heartbeat ping for WorkingBranchChangedMessage...
+2026-11-06T13:08:56.429+03:00 DEBUG Start checking connection to AIE with 'https://release-630-centos90-6230-release-6-3.aie.ptsecurity.ru/health/summary' uri
+2026-11-06T13:08:56.589+03:00 DEBUG Connection status to AIE status has not been changed. Status is 'True'
+2026-11-06T13:09:01.293+03:00 TRACE Sending heartbeat ping for WorkingBranchChangedMessage...
+2026-11-06T13:09:01.607+03:00 DEBUG Start checking connection to AIE with 'https://release-630-centos90-6230-release-6-3.aie.ptsecurity.ru/health/summary' uri
+2026-11-06T13:09:01.740+03:00 DEBUG Connection status to AIE status has not been changed. Status is 'True'
+2026-11-06T13:09:06.311+03:00 TRACE Sending heartbeat ping for WorkingBranchChangedMessage...
+2026-11-06T13:09:06.745+03:00 DEBUG Start checking connection to AIE with 'https://release-630-centos90-6230-release-6-3.aie.ptsecurity.ru/health/summary' uri
+2026-11-06T13:09:06.907+03:00 DEBUG Connection status to AIE status has not been changed. Status is 'True'
+2026-11-06T13:09:11.327+03:00 TRACE Sending heartbeat ping for WorkingBranchChangedMessage...
+2026-11-06T13:09:11.923+03:00 DEBUG Start checking connection to AIE with 'https://release-630-centos90-6230-release-6-3.aie.ptsecurity.ru/health/summary' uri
+2026-11-06T13:09:12.159+03:00 DEBUG Connection status to AIE status has not been changed. Status is 'True'
+2026-11-06T13:09:16.379+03:00 TRACE Sending heartbeat ping for WorkingBranchChangedMessage...
+2026-11-06T13:09:17.224+03:00 DEBUG Start checking connection to AIE with 'https://release-630-centos90-6230-release-6-3.aie.ptsecurity.ru/health/summary' uri
+2026-11-06T13:09:17.398+03:00 DEBUG Connection status to AIE status has not been changed. Status is 'True'
+2026-11-06T13:09:21.408+03:00 TRACE Sending heartbeat ping for WorkingBranchChangedMessage...
+2026-11-06T13:09:22.425+03:00 DEBUG Start checking connection to AIE with 'https://release-630-centos90-6230-release-6-3.aie.ptsecurity.ru/health/summary' uri
+2026-11-06T13:09:22.629+03:00 DEBUG Connection status to AIE status has not been changed. Status is 'True'
+2026-11-06T13:09:26.437+03:00 TRACE Sending heartbeat ping for WorkingBranchChangedMessage...
+2026-11-06T13:09:27.652+03:00 DEBUG Start checking connection to AIE with 'https://release-630-centos90-6230-release-6-3.aie.ptsecurity.ru/health/summary' uri
+2026-11-06T13:09:27.821+03:00 DEBUG Connection status to AIE status has not been changed. Status is 'True'
+2026-11-06T13:09:31.449+03:00 TRACE Sending heartbeat ping for WorkingBranchChangedMessage...
+2026-11-06T13:09:32.832+03:00 DEBUG Start checking connection to AIE with 'https://release-630-centos90-6230-release-6-3.aie.ptsecurity.ru/health/summary' uri
+2026-11-06T13:09:32.981+03:00 DEBUG Connection status to AIE status has not been changed. Status is 'True'
+2026-11-06T13:09:36.460+03:00 TRACE Sending heartbeat ping for WorkingBranchChangedMessage...
+2026-11-06T13:09:37.984+03:00 DEBUG Start checking connection to AIE with 'https://release-630-centos90-6230-release-6-3.aie.ptsecurity.ru/health/summary' uri
+2026-11-06T13:09:38.275+03:00 DEBUG Connection status to AIE status has not been changed. Status is 'True'
+2026-11-06T13:09:41.462+03:00 TRACE Sending heartbeat ping for WorkingBranchChangedMessage...
+2026-11-06T13:09:43.277+03:00 DEBUG Start checking connection to AIE with 'https://release-630-centos90-6230-release-6-3.aie.ptsecurity.ru/health/summary' uri
+2026-11-06T13:09:43.448+03:00 DEBUG Connection status to AIE status has not been changed. Status is 'True'
+2026-11-06T13:09:46.475+03:00 TRACE Sending heartbeat ping for WorkingBranchChangedMessage...
+2026-11-06T13:09:48.452+03:00 DEBUG Start checking connection to AIE with 'https://release-630-centos90-6230-release-6-3.aie.ptsecurity.ru/health/summary' uri
+2026-11-06T13:09:48.750+03:00 DEBUG Connection status to AIE status has not been changed. Status is 'True'
+2026-11-06T13:09:51.489+03:00 TRACE Sending heartbeat ping for WorkingBranchChangedMessage...
+2026-11-06T13:09:53.763+03:00 DEBUG Start checking connection to AIE with 'https://release-630-centos90-6230-release-6-3.aie.ptsecurity.ru/health/summary' uri
+2026-11-06T13:09:53.911+03:00 DEBUG Connection status to AIE status has not been changed. Status is 'True'
+2026-11-06T13:09:56.505+03:00 TRACE Sending heartbeat ping for WorkingBranchChangedMessage...
+2026-11-06T13:09:58.918+03:00 DEBUG Start checking connection to AIE with 'https://release-630-centos90-6230-release-6-3.aie.ptsecurity.ru/health/summary' uri
+2026-11-06T13:09:59.070+03:00 DEBUG Connection status to AIE status has not been changed. Status is 'True'
+2026-11-06T13:10:01.509+03:00 TRACE Sending heartbeat ping for WorkingBranchChangedMessage...
+2026-11-06T13:10:04.085+03:00 DEBUG Start checking connection to AIE with 'https://release-630-centos90-6230-release-6-3.aie.ptsecurity.ru/health/summary' uri
+2026-11-06T13:10:04.346+03:00 DEBUG Connection status to AIE status has not been changed. Status is 'True'
+2026-11-06T13:10:06.513+03:00 TRACE Sending heartbeat ping for WorkingBranchChangedMessage...
+2026-11-06T13:10:09.355+03:00 DEBUG Start checking connection to AIE with 'https://release-630-centos90-6230-release-6-3.aie.ptsecurity.ru/health/summary' uri
+2026-11-06T13:10:09.616+03:00 DEBUG Connection status to AIE status has not been changed. Status is 'True'
+2026-11-06T13:10:11.527+03:00 TRACE Sending heartbeat ping for WorkingBranchChangedMessage...
+2026-11-06T13:10:14.632+03:00 DEBUG Start checking connection to AIE with 'https://release-630-centos90-6230-release-6-3.aie.ptsecurity.ru/health/summary' uri
+2026-11-06T13:10:14.781+03:00 DEBUG Connection status to AIE status has not been changed. Status is 'True'
+2026-11-06T13:10:16.541+03:00 TRACE Sending heartbeat ping for WorkingBranchChangedMessage...
+2026-11-06T13:10:19.784+03:00 DEBUG Start checking connection to AIE with 'https://release-630-centos90-6230-release-6-3.aie.ptsecurity.ru/health/summary' uri
+2026-11-06T13:10:19.936+03:00 DEBUG Connection status to AIE status has not been changed. Status is 'True'
+2026-11-06T13:10:21.547+03:00 TRACE Sending heartbeat ping for WorkingBranchChangedMessage...
+2026-11-06T13:10:24.945+03:00 DEBUG Start checking connection to AIE with 'https://release-630-centos90-6230-release-6-3.aie.ptsecurity.ru/health/summary' uri
+2026-11-06T13:10:25.099+03:00 DEBUG Connection status to AIE status has not been changed. Status is 'True'
+2026-11-06T13:10:26.566+03:00 TRACE Sending heartbeat ping for WorkingBranchChangedMessage...
+2026-11-06T13:10:30.112+03:00 DEBUG Start checking connection to AIE with 'https://release-630-centos90-6230-release-6-3.aie.ptsecurity.ru/health/summary' uri
+2026-11-06T13:10:30.261+03:00 DEBUG Connection status to AIE status has not been changed. Status is 'True'
+2026-11-06T13:10:31.580+03:00 TRACE Sending heartbeat ping for WorkingBranchChangedMessage...
+2026-11-06T13:10:35.269+03:00 DEBUG Start checking connection to AIE with 'https://release-630-centos90-6230-release-6-3.aie.ptsecurity.ru/health/summary' uri
+2026-11-06T13:10:35.396+03:00 DEBUG Connection status to AIE status has not been changed. Status is 'True'
+2026-11-06T13:10:36.594+03:00 TRACE Sending heartbeat ping for WorkingBranchChangedMessage...
+2026-11-06T13:10:40.407+03:00 DEBUG Start checking connection to AIE with 'https://release-630-centos90-6230-release-6-3.aie.ptsecurity.ru/health/summary' uri
+2026-11-06T13:10:40.557+03:00 DEBUG Connection status to AIE status has not been changed. Status is 'True'
+2026-11-06T13:10:41.607+03:00 TRACE Sending heartbeat ping for WorkingBranchChangedMessage...
+2026-11-06T13:10:45.560+03:00 DEBUG Start checking connection to AIE with 'https://release-630-centos90-6230-release-6-3.aie.ptsecurity.ru/health/summary' uri
+2026-11-06T13:10:45.690+03:00 DEBUG Connection status to AIE status has not been changed. Status is 'True'
+2026-11-06T13:10:46.618+03:00 TRACE Sending heartbeat ping for WorkingBranchChangedMessage...
+2026-11-06T13:10:50.705+03:00 DEBUG Start checking connection to AIE with 'https://release-630-centos90-6230-release-6-3.aie.ptsecurity.ru/health/summary' uri
+2026-11-06T13:10:50.864+03:00 DEBUG Connection status to AIE status has not been changed. Status is 'True'
+2026-11-06T13:10:51.626+03:00 TRACE Sending heartbeat ping for WorkingBranchChangedMessage...
+2026-11-06T13:10:55.871+03:00 DEBUG Start checking connection to AIE with 'https://release-630-centos90-6230-release-6-3.aie.ptsecurity.ru/health/summary' uri
+2026-11-06T13:10:56.000+03:00 DEBUG Connection status to AIE status has not been changed. Status is 'True'
+2026-11-06T13:10:56.667+03:00 TRACE Sending heartbeat ping for WorkingBranchChangedMessage...

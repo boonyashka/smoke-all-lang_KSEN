@@ -1,0 +1,10 @@
+2026-11-06T15:40:03.058+03:00 DEBUG @Processor: Otlp service configured. Base attributes: {"user_id":"BAA56966C98E251D","os_type":"Windows","os_version":"Microsoft Windows NT 10.0.26100.0","ide_name":"IntelliJ IDEA","ide_sub_name":"IntelliJ IDEA 2026.3 EAP","ide_version":"IU-263.6800.24","plugin_version":"3.0.1","analyzer_version":"3.0.1.0","is_test":false,"session_id":"e3924fe7-f297-484c-ad94-9e283e9df556"}
+2026-11-06T15:40:06.285+03:00 DEBUG @Processor: Telemetry service is initialized
+2026-11-06T15:40:44.980+03:00 DEBUG @Processor: Collected telemetry with metric key: MapProjectToAieCommandHandled
+2026-11-06T15:40:57.901+03:00 DEBUG @Processor: Collected telemetry with metric key: StartRemoteScanCommandHandled
+2026-11-06T15:43:02.927+03:00 DEBUG @Processor: Store plugin operation time 00:03:14.1969257 s
+2026-11-06T15:45:39.740+03:00 DEBUG @Processor: Collected telemetry with metric key: StartRemoteScanCommandHandled
+2026-11-06T15:46:02.915+03:00 DEBUG @Processor: Store plugin operation time 00:06:14.1850650 s
+2026-11-06T15:46:03.565+03:00 DEBUG @Processor: Telemetry has been sent. Status code: OK
+2026-11-06T15:49:02.905+03:00 DEBUG @Processor: Store plugin operation time 00:09:14.1753510 s
+2026-11-06T15:49:03.872+03:00 DEBUG @Processor: Telemetry has been sent. Status code: OK

@@ -1,0 +1,66 @@
+2026-11-06T15:39:55.199Z [ctureModificationListener$Companion.initForProject] INFO ProjectStructureModificationListener is init for project _ML
+2026-11-06T15:39:55.202Z [s.AiToolwindowsInitializer.reinitializeToolWindows] INFO AI state ENABLED
+2026-11-06T15:39:55.204Z [itializeManager$initializeAnalyzer$1.invokeSuspend] INFO initializing infrastructure
+2026-11-06T15:39:55.206Z [iintellij.transport.base.HeavyBackendService.start] INFO start the new heavy plugins backend instance
+2026-11-06T15:39:55.207Z [urity.aiintellij.utils.logging.AiLoggerAdapter.log] INFO start backend initialization
+2026-11-06T15:39:55.208Z [urity.aiintellij.utils.logging.AiLoggerAdapter.log] INFO isLightMode: false
+2026-11-06T15:39:55.209Z [urity.aiintellij.utils.logging.AiLoggerAdapter.log] INFO backend port is 58677
+2026-11-06T15:39:55.210Z [urity.aiintellij.utils.logging.AiLoggerAdapter.log] INFO starting new backend process
+2026-11-06T15:39:55.211Z [urity.aiintellij.utils.logging.AiLoggerAdapter.log] INFO backend args: [C:\Users\knedyakina\AppData\Local\Application Inspector Analyzer\AI.PluginsBackend.exe, --port, 58677, --log-level, Trace, --logs-dir, C:\QA\(all)\smoke-all-lang-more-update-clear_KSEN\_ML\.ai\Logs\Infrastructure\2026-11-06-18-39-55, --light-mode, false]
+2026-11-06T15:39:55.222Z [y.aiintellij.ui.panels.AIToolWindowLogPanel.<init>] INFO initializing a logs panel
+2026-11-06T15:39:55.233Z [urity.aiintellij.utils.logging.AiLoggerAdapter.log] INFO backend process with PID 33740 started
+2026-11-06T15:39:55.249Z [intellij.services.AiInitializeManager.initializeAI] INFO IntelliJ listens web server on port: 63342
+2026-11-06T15:39:55.349Z [y.aiintellij.ui.panels.AIToolWindowLogPanel.<init>] INFO initializing a logs panel
+2026-11-06T15:40:06.453Z [uctureInitializer.initializeInfrastructureInstance] INFO Infrastructure initialized
+2026-11-06T15:40:10.321Z [y.aiintellij.utils.logging.AiProjectLogger.cleanUp] INFO Clean up logs files was started
+2026-11-06T15:40:10.323Z [y.aiintellij.utils.logging.AiProjectLogger.cleanUp] INFO Clean up logs files was finished
+2026-11-06T15:40:10.324Z [istantNotificationService.subscribeOnNotifications] INFO subscribing on the assistant notifications
+2026-11-06T15:40:10.890Z [stantNotificationService.onTipsAvailabilityUpdated] INFO tips availability updated availability {
+}
+
+2026-11-06T15:40:10.934Z [AssistantNotificationService.onQuickFixTipsUpdated] INFO assistant quickfixes were updated quick_fix_tips {
+}
+
+2026-11-06T15:40:12.405Z [urity.aiintellij.utils.logging.AiLoggerAdapter.log] INFO AIE server version is version: "6.3.0.7514"
+
+2026-11-06T15:40:12.405Z [urity.aiintellij.utils.logging.AiLoggerAdapter.log] INFO Needed AIE version version is 6.3.0.0
+2026-11-06T15:40:12.801Z [urity.aiintellij.utils.logging.AiLoggerAdapter.log] INFO Attempt  1 to initialize map failed, retry in 3sms
+2026-11-06T15:40:15.331Z [ij.services.BranchService.subscribeOnNotifications] INFO subscribing on the branch notifications
+2026-11-06T15:40:15.863Z [ces.aie.AieInitializer.loadPreviouslyMappedProject] INFO No AIE mapped project
+2026-11-06T15:40:15.863Z [ices.aie.AieInitializer$initialize$2.invokeSuspend] INFO AIE Integration initialized
+2026-11-06T15:40:23.038Z [grationEnsureService.ensureServerIsConnectedAndRun] INFO user already authenticated, run the action
+2026-11-06T15:40:23.068Z [urity.aiintellij.utils.logging.AiLoggerAdapter.log] INFO no mapped project found
+2026-11-06T15:40:23.575Z [urity.aiintellij.utils.logging.AiLoggerAdapter.log] INFO languages are [JavaScript, Python]
+2026-11-06T15:40:37.552Z [urity.aiintellij.utils.logging.AiLoggerAdapter.log] INFO update user's permissions: UserInfo(name=ksen nedka, globalPermissions=[], projectPermissions=[])
+2026-11-06T15:40:37.554Z [urity.aiintellij.utils.logging.AiLoggerAdapter.log] INFO can user approve issues: false
+2026-11-06T15:40:37.554Z [urity.aiintellij.utils.logging.AiLoggerAdapter.log] INFO can user discard issues: false
+2026-11-06T15:40:39.289Z [grationEnsureService.ensureServerIsConnectedAndRun] INFO user already authenticated, run the action
+2026-11-06T15:40:39.307Z [urity.aiintellij.utils.logging.AiLoggerAdapter.log] INFO no mapped project found
+2026-11-06T15:40:39.372Z [urity.aiintellij.utils.logging.AiLoggerAdapter.log] INFO languages are [JavaScript, Python]
+2026-11-06T15:40:44.129Z [iintellij.controllers.aie.MapProjectController.map] INFO sync statuses: FromEnterprise
+2026-11-06T15:40:44.999Z [.controllers.aie.MapProjectController.onMapSuccess] INFO project successfully mapped: _ML
+2026-11-06T15:40:45.267Z [iintellij.controllers.aie.MapProjectController.map] INFO project mapping is done
+2026-11-06T15:40:45.297Z [iintellij.controllers.aie.MapProjectController.map] INFO should pull scan artifacts: true
+2026-11-06T15:40:45.298Z [aie.PullScanArtifactsService.pullLastScanArtifacts] INFO user started the scan result pulling
+2026-11-06T15:40:45.475Z [urity.aiintellij.utils.logging.AiLoggerAdapter.log] INFO update user's permissions: UserInfo(name=ksen nedka, globalPermissions=[], projectPermissions=[ViewProject, ChangeVulnStatus, DeleteScanResult, UpdateProject, ManageScan, DeleteProject, ManageProjectMembership, DeleteIssueTrackerTicket, CreateIssueTrackerTicket, ChangeVulnStatusWithoutComment, ManageBranches])
+2026-11-06T15:40:45.476Z [urity.aiintellij.utils.logging.AiLoggerAdapter.log] INFO can user approve issues: true
+2026-11-06T15:40:45.476Z [urity.aiintellij.utils.logging.AiLoggerAdapter.log] INFO can user discard issues: true
+2026-11-06T15:40:53.390Z [grationEnsureService.ensureServerIsConnectedAndRun] INFO user already authenticated, run the action
+2026-11-06T15:40:53.391Z [emoteScanManager.startRemoteScanWhenAieIsConnected] INFO is mapped project needed to start a scan: true
+2026-11-06T15:40:53.391Z [nsureService.ensureProjectAndBranchAreMappedAndRun] INFO Project and branch are mapped, run the action
+2026-11-06T15:40:53.391Z [ieRemoteScanManager.startRemoteScanOnRemoteProject] INFO starting the remote project scan
+2026-11-06T15:40:53.392Z [ieRemoteScanManager.startRemoteScanOnRemoteProject] INFO remote project id is e56468b3-9836-46fe-a0b2-2ca1be4ee2a6
+2026-11-06T15:40:55.638Z [ScanManager.showScanOnRemoteProjectWarningIfNeeded] INFO agreement status is true
+2026-11-06T15:41:12.342Z [urity.aiintellij.utils.logging.AiLoggerAdapter.log] INFO update user's permissions: UserInfo(name=ksen nedka, globalPermissions=[], projectPermissions=[ViewProject, ChangeVulnStatus, DeleteScanResult, UpdateProject, ManageScan, DeleteProject, ManageProjectMembership, DeleteIssueTrackerTicket, CreateIssueTrackerTicket, ChangeVulnStatusWithoutComment, ManageBranches])
+2026-11-06T15:41:12.342Z [urity.aiintellij.utils.logging.AiLoggerAdapter.log] INFO can user approve issues: true
+2026-11-06T15:41:12.342Z [urity.aiintellij.utils.logging.AiLoggerAdapter.log] INFO can user discard issues: true
+2026-11-06T15:42:51.702Z [vices.aie.AieRemoteScanManager.onAieConnectionLost] INFO connection with AIE lost, waiting for reconnect to continue the remote scan
+2026-11-06T15:43:42.305Z [j.services.aie.AieRemoteScanManager.stopRemoteScan] INFO can not stop the remote scan while waiting for reconnect: ConnectionDisposed
+2026-11-06T15:45:35.486Z [grationEnsureService.ensureServerIsConnectedAndRun] INFO user already authenticated, run the action
+2026-11-06T15:45:35.487Z [emoteScanManager.startRemoteScanWhenAieIsConnected] INFO is mapped project needed to start a scan: true
+2026-11-06T15:45:35.487Z [nsureService.ensureProjectAndBranchAreMappedAndRun] INFO Project and branch are mapped, run the action
+2026-11-06T15:45:35.488Z [ieRemoteScanManager.startRemoteScanOnRemoteProject] INFO starting the remote project scan
+2026-11-06T15:45:35.488Z [ieRemoteScanManager.startRemoteScanOnRemoteProject] INFO remote project id is e56468b3-9836-46fe-a0b2-2ca1be4ee2a6
+2026-11-06T15:45:38.287Z [ScanManager.showScanOnRemoteProjectWarningIfNeeded] INFO agreement status is true
+2026-11-06T15:46:46.041Z [vices.aie.AieRemoteScanManager.onAieConnectionLost] INFO connection with AIE lost, waiting for reconnect to continue the remote scan
+2026-11-06T15:46:51.866Z [j.services.aie.AieRemoteScanManager.stopRemoteScan] INFO can not stop the remote scan while waiting for reconnect: ConnectionDisposed
